@@ -11,7 +11,7 @@ html {
 
 body,
 p {
-  font-family: var(--body-font);
+  font-family: var(--font-body);
 }
 
 h1,
@@ -20,11 +20,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--header-font);
+  font-family: var(--font-header);
 }
 
 .logo {
-  font-family: var(--logo-font);
+  font-family: var(--font-logo);
 }
 
 ul {
