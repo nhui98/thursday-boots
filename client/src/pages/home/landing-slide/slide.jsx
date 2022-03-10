@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../../components/button/button";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 
 const Slide = () => {
+    const [slideNumber, setSlideNumber] = useState(1)
+
+    const incrementSlide = () => {
+        slideNumber < 3 ? setSlideNumber(prevState => prevState + 1) : setSlideNumber(1)
+    }
+
+    const decrementSlide = () => {
+        slideNumber > 1 ? setSlideNumber(prevState => prevState - 1) : setSlideNumber(3)
+    }
+
     return (
         <section className="slide">
-            <figure className="slide__wrapper one">
+            <div className={"left"} onClick={() => decrementSlide()}>
+                <AiOutlineLeft />
+            </div>
+
+            <figure className={`slide__wrapper one${slideNumber === 1? " active" : ""}`}>
                 <img src="/images/home1.webp" alt="slide 1" className="hidden-sm" />
                 <img src="/images/home1-small.webp" alt="slide 1" className="hidden-lg visible-sm" />
                 <figcaption className="slide__wrapper-card">
@@ -21,7 +36,7 @@ const Slide = () => {
                 </figcaption>
             </figure>
 
-            <figure className="slide__wrapper two">
+            <figure className={`slide__wrapper two${slideNumber === 2 ? " active" : ""}`}>
                 <img src="/images/home2.webp" alt="slide 2" className="hidden-sm" />
                 <img src="/images/home2-small.webp" alt="slide 2" className="hidden-lg visible-sm" />
                 <figcaption className="slide__wrapper-card">
@@ -41,7 +56,7 @@ const Slide = () => {
                 </figcaption>
             </figure>
 
-            <figure className="slide__wrapper three">
+            <figure className={`slide__wrapper three${slideNumber === 3 ? " active" : ""}`}>
                 <img src="/images/home3.webp" alt="slide 3" className="hidden-sm" />
                 <img src="/images/home3-small.webp" alt="slide 3" className="hidden-lg visible-sm" />
                 <figcaption className="slide__wrapper-card">
@@ -60,6 +75,10 @@ const Slide = () => {
                     </div>
                 </figcaption>
             </figure>
+
+            <div className="right" onClick={() => incrementSlide()}>
+                <AiOutlineRight />
+            </div>
         </section>
     )
 }
