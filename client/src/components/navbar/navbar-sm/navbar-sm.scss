@@ -22,6 +22,7 @@
       font-size: 1.25rem;
       padding: 0 1rem;
       transition: all 0.5s;
+      cursor: pointer;
     }
   }
 
@@ -33,6 +34,7 @@
       font-size: 2.5rem;
       letter-spacing: 0.04em;
       transition: all 0.5s;
+      cursor: pointer;
     }
   }
 
@@ -69,6 +71,7 @@
       .navbarsm__right-account,
       .navbarsm__right-basket {
         color: var(--color-black);
+        cursor: pointer;
       }
     }
   }
@@ -84,4 +87,7 @@
 }
 
 @media screen and (max-width: 450px) {
+  .navbarsm {
+    padding: 0 0.5rem;
+  }
 }

@@ -42,3 +42,18 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width: 1450px) {
+}
+
+@media screen and (max-width: 950px) {
+  .navbarsm {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hidden-xs {
+    display: none;
+  }
+}
