@@ -1,7 +1,7 @@
 import React from "react"
 
 import "./home.scss"
-import Slide from "./landing-slide/slide"
+import Slide from "./img-slide/slide"
 
 const Home = () => {
     return (

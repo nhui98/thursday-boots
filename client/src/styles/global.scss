@@ -44,9 +44,6 @@ img {
 }
 
 @media screen and (max-width: 1450px) {
-  .hidden-lg {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 950px) {
@@ -55,9 +52,6 @@ img {
   }
   .hidden-sm {
     display: none;
-  }
-  .visible-sm {
-    display: flex;
   }
 }
 
