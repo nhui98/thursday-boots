@@ -103,6 +103,31 @@
     right: 0;
     padding-right: 2rem;
   }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 900;
+    bottom: 0;
+
+    width: 100%;
+    margin-bottom: 2rem;
+
+    .dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 1rem;
+      margin: 0 0.5rem;
+
+      transition: all 0.5s;
+
+      &.active {
+        background-color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1450px) {
@@ -114,6 +139,13 @@
       .slide__wrapper-card {
         width: 100%;
       }
+    }
+
+    .left,
+    .right {
+      top: unset;
+      bottom: 0;
+      margin-bottom: 2rem;
     }
   }
 }

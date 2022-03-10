@@ -79,6 +79,12 @@ const Slide = () => {
             <div className="right" onClick={() => incrementSlide()}>
                 <AiOutlineRight />
             </div>
+
+            <div className="dots">
+                <div className={`dot${slideNumber === 1 ? " active" : ""}`} />
+                <div className={`dot${slideNumber === 2 ? " active" : ""}`} />
+                <div className={`dot${slideNumber === 3 ? " active" : ""}`} />
+            </div>
         </section>
     )
 }
