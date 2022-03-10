@@ -1,0 +1,142 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  width: 100vw;
+  min-width: 300px;
+  height: 5rem;
+  padding: 0 1.5rem;
+
+  transition: all 0.5s;
+
+  .navbar__left {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+
+    .navbar__left-link {
+      padding: 0 1rem;
+
+      a {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-white);
+        font-size: 0.75rem;
+        font-weight: 600;
+        transition: all 0.5s;
+
+        svg {
+          padding-top: 0.25rem;
+        }
+      }
+    }
+  }
+
+  .navbar__center {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+
+    .navbar__center-title {
+      color: var(--color-white);
+      font-size: 4rem;
+      letter-spacing: 0.04em;
+      transform: translateY(1rem);
+      transition: all 0.5s;
+    }
+  }
+
+  .navbar__right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+
+    .navbar__right-links {
+      display: flex;
+      flex-direction: row;
+      margin-right: 2rem;
+
+      .navbar__right-link {
+        padding: 0 1rem;
+
+        a {
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--color-white);
+          font-size: 0.75rem;
+          font-weight: 600;
+          transition: all 0.5s;
+        }
+      }
+    }
+
+    .navbar__icons {
+      display: flex;
+      flex-direction: row;
+
+      .navbar__icons-search,
+      .navbar__icons-basket {
+        display: flex;
+
+        font-size: 1.5rem;
+        color: var(--color-white);
+        padding: 0 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-white);
+
+    .navbar__left {
+      .navbar__left-link {
+        a {
+          color: var(--color-black);
+        }
+      }
+    }
+
+    .navbar__center {
+      .navbar__center-title {
+        color: var(--color-black);
+        font-size: 3rem;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar__right {
+      .navbar__right-links {
+        .navbar__right-link {
+          a {
+            color: var(--color-black);
+          }
+        }
+      }
+
+      .navbar__icons {
+        .navbar__icons-search,
+        .navbar__icons-basket {
+          color: var(--color-black);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1450px) {
+}
+
+@media screen and (max-width: 950px) {
+  .navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+}
