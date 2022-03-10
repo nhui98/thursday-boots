@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/navbar"
 
 const App = () => {
     return (
-        <div id="thursday" className="thursday">
+        <div className="thursday">
             <Navbar />
         </div>
     )
