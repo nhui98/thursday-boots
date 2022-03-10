@@ -1,0 +1,15 @@
+.featuredsm {
+  display: none;
+}
+
+@media screen and (max-width: 1450px) {
+}
+
+@media screen and (max-width: 950px) {
+}
+
+@media screen and (max-width: 750px) {
+  .featuredsm {
+    display: flex;
+  }
+}
