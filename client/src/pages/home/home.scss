@@ -1,51 +1,10 @@
+@import "./landing-slide/slide";
+
 .home {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100vw;
+  min-width: 300px;
   min-height: 100vh;
-}
-
-.slide {
-  .slide__one {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-
-    .slide__one-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      position: absolute;
-      top: 0;
-      width: 50%;
-      height: 100%;
-
-      h1 {
-        color: var(--color-white);
-        text-align: center;
-        font-size: 3.5rem;
-        font-weight: bold;
-        line-height: 1.5;
-        text-transform: capitalize;
-      }
-
-      p {
-        color: var(--color-white);
-        text-transform: capitalize;
-        line-height: 1.5;
-        margin: 1.5rem 0;
-        font-weight: 400;
-        letter-spacing: 0.04em;
-      }
-
-      .call-to-action {
-        .button {
-          margin: 0 1rem;
-        }
-      }
-    }
-  }
 }
