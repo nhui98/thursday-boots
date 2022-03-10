@@ -15,8 +15,16 @@ const NavbarFlyout = () => {
                 </div>
             </header>
 
-            <section className="navflyout__links">
-                
+            <section className="navflyout__body">
+                <div className="navflyout__body-accordion">Men</div>
+                <div className="navflyout__body-accordion">Women</div>
+                <div className="divide" />
+                <ul className="navflyout__body-links">
+                    <li className="navflyout__body-link"><a href="/">about</a></li>
+                    <li className="navflyout__body-link"><a href="/">help</a></li>
+                    <li className="navflyout__body-link"><a href="/">account</a></li>
+                    <li className="navflyout__body-link"><a href="/">gift cards</a></li>
+                </ul>
             </section>
         </aside>
     )
