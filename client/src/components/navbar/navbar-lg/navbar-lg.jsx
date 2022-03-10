@@ -1,7 +1,6 @@
 import React from "react"
 import { BiSearch, BiShoppingBag } from "react-icons/bi"
 import { AiOutlineDown } from "react-icons/ai"
-import "./navbar-lg.scss"
 
 const NavbarLg = () => {
     return (
