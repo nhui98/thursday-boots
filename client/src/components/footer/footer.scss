@@ -1,0 +1,154 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  min-width: 300px;
+  width: 100%;
+  padding: 3rem;
+
+  .sitemap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 50%;
+
+    .sitemap-links {
+      p {
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        text-transform: capitalize;
+      }
+
+      .sitemap-link {
+        color: rgba(0, 0, 0, 0.5);
+        text-transform: capitalize;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+
+    .signup-box {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        text-transform: capitalize;
+        letter-spacing: 0.02em;
+      }
+
+      .signup {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem 0;
+
+        input {
+          border: 1px solid black;
+          padding: 0.5rem;
+          margin-right: 0.5rem;
+        }
+
+        button {
+          display: inline-block;
+
+          color: var(--color-black);
+          background-color: var(--color-white);
+
+          font-size: 0.75rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          text-align: center;
+          line-height: 1.5;
+
+          padding: 0.5rem 1rem;
+          width: 12rem;
+          transition: all 0.5s;
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--color-offwhite);
+          }
+        }
+      }
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: row;
+
+      .social-link {
+        font-size: 1.5rem;
+        padding-right: 1rem;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 1);
+        transition: all 0.5s;
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1450px) {
+}
+
+@media screen and (max-width: 950px) {
+  .footer {
+    flex-direction: column;
+    padding: 1.5rem 0.5rem;
+
+    .sitemap {
+      width: 100%;
+      padding: 3rem 0;
+    }
+
+    .newsletter {
+      align-items: center;
+
+      .signup-box {
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+    .sitemap {
+      .sitemap-links {
+        flex: 1;
+
+        .sitemap-link {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+    .newsletter {
+      .signup-box {
+        label {
+          font-size: 0.75rem;
+        }
+
+        .signup {
+          flex-wrap: wrap;
+
+          .signup-input,
+          .signup-btn {
+            width: 100%;
+            margin: 0.5rem 0;
+          }
+        }
+      }
+    }
+  }
+}
