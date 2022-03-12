@@ -1,0 +1,119 @@
+.productdetails {
+  min-width: 300px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.product-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.product__details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 50%;
+  padding-right: 4rem;
+
+  .product__details-name {
+    text-transform: capitalize;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    font-size: 2.5rem;
+  }
+
+  .product__details-price {
+    line-height: 1.5;
+  }
+
+  .product__details-color {
+    text-transform: capitalize;
+    line-height: 1.5;
+  }
+
+  .variation {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+
+    .variation-img {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.5s;
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+
+      &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  .product__details-sizes {
+    p {
+      letter-spacing: 0.02em;
+    }
+
+    .size-grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+      row-gap: 1rem;
+      column-gap: 0.5rem;
+
+      .size {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--color-offwhite);
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        transition: all 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--color-offwhite);
+        }
+      }
+    }
+  }
+
+  .shipping-info {
+    text-transform: capitalize;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+}
+
+@media screen and (max-width: 950px) {
+  .details-container {
+    flex-direction: column;
+    row-gap: 3rem;
+    padding: 6rem 0;
+  }
+
+  .product-images {
+    width: 100%;
+  }
+
+  .product__details {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+}
