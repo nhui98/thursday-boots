@@ -1,0 +1,167 @@
+.productlisting {
+  display: flex;
+  flex-direction: row;
+  padding-top: 6rem;
+  width: 100vw;
+  min-width: 300px;
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding-left: 4rem;
+  position: relative;
+
+  .sidenav-title {
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .sidenav-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    .sidenav-link {
+      padding: 0.5rem 1rem;
+      text-transform: capitalize;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      background-color: var(--color-offwhite);
+    }
+  }
+}
+
+.plisting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  padding: 0 5rem;
+
+  .header {
+    position: relative;
+    height: 20rem;
+
+    .title-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+
+      width: 70%;
+      height: 100%;
+
+      .title {
+        text-transform: capitalize;
+        color: var(--color-white);
+        font-size: 2.5rem;
+        line-height: 1.5;
+      }
+
+      .sub-title {
+        text-transform: capitalize;
+        color: var(--color-white);
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.plisting-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.plisting-title {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 2rem 1rem;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 2rem;
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    .details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .details-left {
+      display: flex;
+      flex-direction: column;
+
+      .name,
+      .color {
+        text-transform: capitalize;
+      }
+
+      .color {
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .sidenav {
+    display: none;
+  }
+
+  .plisting {
+    width: 100%;
+    padding: 0 1rem;
+
+    .header {
+      height: 18rem;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .plisting {
+    .header {
+      height: 14rem;
+
+      .title-card {
+        width: 100%;
+
+        .title {
+          font-size: 2rem;
+        }
+
+        .sub-title {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+
+  .products-container {
+    display: flex;
+    width: max-content;
+  }
+}
