@@ -4,26 +4,29 @@ import "./product-listing.scss"
 
 const ProductListing = () => {
     return (
+        <>
         <main className="productlisting">
-            <aside className="sidenav">
-                <h2 className="sidenav-title">boots</h2>
-                <ul className="sidenav-links">
-                    <li className="sidenav-link">
-                        <a href="/">lace-up</a>
-                    </li>
-                    <li className="sidenav-link">
-                        <a href="/">chelsea</a>
-                    </li>
-                    <li className="sidenav-link">
-                        <a href="/">chukka</a>
-                    </li>
-                    <li className="sidenav-link">
-                        <a href="/">rugged & resilient</a>
-                    </li>
-                    <li className="sidenav-link">
-                        <a href="/">Lace-up</a>
-                    </li>
-                </ul>
+            <aside className="sidenav-container">
+                <aside className="sidenav">
+                    <h2 className="sidenav-title">boots</h2>
+                    <ul className="sidenav-links">
+                        <li className="sidenav-link">
+                            <a href="/">lace-up</a>
+                        </li>
+                        <li className="sidenav-link">
+                            <a href="/">chelsea</a>
+                        </li>
+                        <li className="sidenav-link">
+                            <a href="/">chukka</a>
+                        </li>
+                        <li className="sidenav-link">
+                            <a href="/">rugged & resilient</a>
+                        </li>
+                        <li className="sidenav-link">
+                            <a href="/">Lace-up</a>
+                        </li>
+                    </ul>
+                    </aside>
             </aside>
 
             <section className="plisting">
@@ -45,6 +48,14 @@ const ProductListing = () => {
                 </div>
             </section>
         </main>
+            
+
+        <section className="faq">
+            <h2 className="title">have a question?</h2>
+            <p>No problem! we're here to help. click the link for assistance.</p>
+            <a href="/" className="button">FAQ</a>
+        </section>
+        </>
     )
 }
 
