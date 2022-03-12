@@ -2,10 +2,26 @@ import React, { useState } from "react"
 import { BiSearch, BiShoppingBag } from "react-icons/bi"
 import { MdOutlineAccountCircle } from "react-icons/md"
 import { GiHamburgerMenu } from "react-icons/gi"
-import { AiOutlineClose } from "react-icons/ai"
+import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus} from "react-icons/ai"
 
 const NavbarSm = () => {
     const [flyoutToggle, setFlyoutToggle] = useState(false)
+    const [dropDown, setDropDown] = useState({
+        men: false,
+        women: false,
+
+    })
+
+    const dropdownHandler = e => {
+
+        e.currentTarget.dataset.men && setDropDown(prevState => {
+            return {...prevState, men: !prevState.men}
+        })
+
+        e.currentTarget.dataset.women && setDropDown(prevState => {
+            return {...prevState, women: !prevState.women}
+        })
+    }
 
     return (
         <>
@@ -38,8 +54,66 @@ const NavbarSm = () => {
                 </header>
 
                 <section className="navflyout__body">
-                    <div className="navflyout__body-accordion">Men</div>
-                    <div className="navflyout__body-accordion">Women</div>
+                    <div className="accordion">
+                        <div className={`levelone-header${dropDown.men ? " active" : ""}`} data-men onClick={e => dropdownHandler(e)}>
+                            <h2 className="levelone-title">
+                                men
+                            </h2>
+                            <div className="toggle-icons">
+                                <div className={`plus${dropDown.men ? " active" : ""}`}>
+                                    <AiOutlinePlus />
+                                </div>
+                                <div className={`minus${dropDown.men ? "" : " active"}`}>
+                                    <AiOutlineMinus />
+                                </div>
+                            </div>
+                        </div>
+                        <ul className="levelone-dropdown">
+                            <li className="dropdown-item">
+                                <a href="/">boots</a>
+                            </li>
+                            <li className="dropdown-item">
+                                <a href="/">sneakers</a>
+                            </li>
+                            <li className="dropdown-item">
+                                <a href="/">shoes</a>
+                            </li>
+                            <li className="dropdown-item">
+                                <a href="/">accessories & apparel</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="accordion">
+                        <div
+                            className={`levelone-header${dropDown.women ? " active" : ""}`} data-women
+                            onClick={e => dropdownHandler(e)}>
+                            <h2 className="levelone-title">
+                                women
+                            </h2>
+                            <div className="toggle-icons">
+                                <div className={`plus${dropDown.men ? " active" : ""}`}>
+                                    <AiOutlinePlus />
+                                </div>
+                                <div className={`minus${dropDown.men ? "" : " active"}`}>
+                                    <AiOutlineMinus />
+                                </div>
+                            </div>
+                        </div>
+                        <ul className="levelone-dropdown">
+                            <li className="dropdown-item">
+                                <a href="/">boots</a>
+                            </li>
+                            <li className="dropdown-item">
+                                <a href="/">sneakers</a>
+                            </li>
+                            <li className="dropdown-item">
+                                <a href="/">shoes</a>
+                            </li>
+                            <li className="dropdown-item">
+                                <a href="/">accessories & apparel</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="divide" />
                     <ul className="navflyout__body-links">
                         <li className="navflyout__body-link"><a href="/">about</a></li>

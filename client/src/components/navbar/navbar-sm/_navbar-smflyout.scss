@@ -59,6 +59,68 @@
         }
       }
     }
+
+    .accordion {
+      display: flex;
+      flex-direction: column;
+
+      .levelone-header {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .levelone-title {
+          text-transform: uppercase;
+        }
+
+        .toggle-icons {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .plus,
+          .minus {
+            position: absolute;
+            transition: all 0.5s;
+            z-index: -1;
+            opacity: 0;
+            padding-right: 2rem;
+
+            &.active {
+              z-index: 1;
+              opacity: 1;
+            }
+          }
+        }
+
+        &.active {
+          & + .levelone-dropdown {
+            .dropdown-item {
+              display: flex;
+              height: 100%;
+              transform: scaleY(1);
+            }
+          }
+        }
+      }
+
+      .levelone-dropdown {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+
+        .dropdown-item {
+          display: flex;
+          flex-direction: column;
+          display: none;
+          transition: all 0.5s;
+          height: 0;
+          transform: scaleY(0);
+          padding: 0.5rem 0;
+        }
+      }
+    }
   }
 }
 
