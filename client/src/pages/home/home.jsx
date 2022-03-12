@@ -7,7 +7,7 @@ import Slide from "./img-slide/slide"
 
 const Home = () => {
     return (
-        <main className="home">
+        <main className="home" id="home">
             <Slide />
             <CategoryGrid />
             <Featured />

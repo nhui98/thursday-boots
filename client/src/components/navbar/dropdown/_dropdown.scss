@@ -1,0 +1,35 @@
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 0;
+  top: 5rem;
+
+  visibility: hidden;
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 2rem 5rem;
+  opacity: 0;
+  transition: all 0.5s;
+
+  &:hover {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-links {
+    width: 15rem;
+
+    .dropdown-link {
+      text-transform: capitalize;
+      letter-spacing: 0.04em;
+      margin: 0.5rem 0;
+      color: rgba(0, 0, 0, 0.7);
+
+      &:first-child {
+        font-weight: bold;
+        color: var(--color-black);
+      }
+    }
+  }
+}

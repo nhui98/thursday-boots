@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom"
+import { BrowserRouter } from "react-router-dom"
 
 import App from "./App";
 
@@ -7,6 +8,9 @@ import "./styles/variables.scss"
 import "./styles/global.scss"
 
 ReactDom.render(
-    <App />,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+    ,
     document.getElementById("root")
 )
