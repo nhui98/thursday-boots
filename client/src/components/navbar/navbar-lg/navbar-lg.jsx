@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { BiSearch, BiShoppingBag } from "react-icons/bi"
 import { AiOutlineDown } from "react-icons/ai"
 

@@ -9,6 +9,8 @@
   min-width: 300px;
   height: 4rem;
   padding: 0 1.5rem;
+  border-bottom: 1px solid var(--color-offwhite);
+  background-color: var(--color-white);
 
   transition: all 0.5s;
 
@@ -18,7 +20,7 @@
 
     .navbarsm__left-hamburger,
     .navbarsm__left-search {
-      color: var(--color-white);
+      color: var(--color-black);
       font-size: 1.25rem;
       padding: 0 1rem;
       transition: all 0.5s;
@@ -30,7 +32,7 @@
     display: flex;
 
     .navbarsm__center-title {
-      color: var(--color-white);
+      color: var(--color-black);
       font-size: 2.5rem;
       letter-spacing: 0.04em;
       transition: all 0.5s;
@@ -44,35 +46,11 @@
 
     .navbarsm__right-account,
     .navbarsm__right-basket {
-      color: var(--color-white);
+      color: var(--color-black);
       font-size: 1.25rem;
       padding: 0 1rem;
       transition: all 0.5s;
-    }
-  }
-
-  &:hover {
-    background-color: var(--color-white);
-
-    .navbarsm__left {
-      .navbarsm__left-hamburger,
-      .navbarsm__left-search {
-        color: var(--color-black);
-      }
-    }
-
-    .navbarsm__center {
-      .navbarsm__center-title {
-        color: var(--color-black);
-      }
-    }
-
-    .navbarsm__right {
-      .navbarsm__right-account,
-      .navbarsm__right-basket {
-        color: var(--color-black);
-        cursor: pointer;
-      }
+      cursor: pointer;
     }
   }
 }
