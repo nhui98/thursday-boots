@@ -17,9 +17,13 @@
     display: flex;
     flex-direction: row;
     width: 30%;
+    height: 100%;
 
     .navbar__left-link {
+      display: flex;
+      align-items: center;
       padding: 0 1rem;
+      height: 100%;
 
       a {
         text-transform: uppercase;
@@ -31,6 +35,52 @@
 
         svg {
           padding-top: 0.25rem;
+        }
+      }
+
+      &.men,
+      &.women {
+        &:hover {
+          & + .dropdown {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .dropdown {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      left: 0;
+      top: 5rem;
+
+      visibility: hidden;
+      width: 100%;
+      background-color: var(--color-white);
+      padding: 2rem 5rem;
+      opacity: 0;
+      transition: all 0.5s;
+
+      &:hover {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .dropdown-links {
+        width: 15%;
+
+        .dropdown-link {
+          text-transform: capitalize;
+          letter-spacing: 0.04em;
+          margin: 0.5rem 0;
+          color: rgba(0, 0, 0, 0.7);
+
+          &:first-child {
+            font-weight: bold;
+            color: var(--color-black);
+          }
         }
       }
     }
@@ -95,6 +145,7 @@
 
   &:hover {
     background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-offwhite);
 
     .navbar__left {
       .navbar__left-link {
