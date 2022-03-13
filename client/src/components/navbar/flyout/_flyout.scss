@@ -1,0 +1,74 @@
+@import "../accordion/accordion";
+
+.navflyout {
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 300px;
+  height: 100vh;
+  padding: 0 1rem;
+  background-color: var(--color-white);
+  transform: translateX(-500px);
+  transition: all 0.5s;
+
+  &.active {
+    transform: translateX(0);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .navflyout__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 3rem;
+
+    .navflyout__header-search,
+    .navflyout__header-close {
+      display: flex;
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .navflyout__header-search {
+      display: none;
+    }
+  }
+
+  .navflyout__body {
+    .divide {
+      height: 1px;
+      width: 2rem;
+      border-bottom: 1px solid var(--color-fadedblack);
+      margin: 2rem 0;
+    }
+
+    .navflyout__body-links {
+      .navflyout__body-link {
+        margin: 2rem 0;
+
+        a {
+          color: var(--color-fadedblack);
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .navflyout {
+    .navflyout__header {
+      .navflyout__header-search {
+        display: flex;
+      }
+    }
+  }
+}
