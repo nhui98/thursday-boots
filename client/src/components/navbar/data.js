@@ -4,23 +4,23 @@ export const MenDropdownLinks = [
         links: [
             {
                 name: "All Styles",
-                to: "/product-listing/mens-boots"
+                to: "/product-listing/mens/boots"
             },
             {
                 name: "Lace-Up",
-                to: "/product-listing/mens-boots/#captain"
+                to: "/product-listing/mens/boots/"
             },
             {
                 name: "Chelsea",
-                to: "/product-listing/mens-boots/#chelsea"
+                to: "/product-listing/mens/boots/"
             },
             {
                 name: "Chukka",
-                to: "/product-listing/mens-boots/#chukka"
+                to: "/product-listing/mens/boots/"
             },
             {
                 name: "Rugged & Resilient",
-                to: "/product-listing/mens-boots/#president"
+                to: "/product-listing/mens/boots/"
             }
         ]
     },
@@ -29,15 +29,15 @@ export const MenDropdownLinks = [
         links: [
             {
                 name: "All Styles",
-                to: "/product-listing/mens-sneakers"
+                to: "/product-listing/mens/sneakers"
             },
             {
                 name: "Low Tops",
-                to: "/product-listing/mens-boots/#low-tops"
+                to: "/product-listing/mens/sneakers"
             },
             {
                 name: "High Tops",
-                to: "/product-listing/mens-boots/#high-tops"
+                to: "/product-listing/mens/sneakers"
             }
         ]
     },
@@ -46,15 +46,15 @@ export const MenDropdownLinks = [
         links: [
             {
                 name: "All Styles",
-                to: "/product-listing/mens-shoes"
+                to: "/product-listing/mens/shoes"
             },
             {
                 name: "Dress Shoes",
-                to: "/product-listing/mens-shoes/#dress-shoes"
+                to: "/product-listing/mens/shoes"
             },
             {
                 name: "Loafers",
-                to: "/product-listing/mens-shoes/#loafers"
+                to: "/product-listing/mens/shoes"
             }
         ]
     },
@@ -63,23 +63,23 @@ export const MenDropdownLinks = [
         links: [
             {
                 name: "Shoe Care",
-                to: "/product-listing/accessories/#shoe-care"
+                to: "/product-listing/accessories"
             },
             {
                 name: "Laces",
-                to: "/product-listing/accessories/#laces"
+                to: "/product-listing/accessories"
             },
             {
                 name: "Socks",
-                to: "/product-listing/accessories/#socks"
+                to: "/product-listing/accessories"
             },
             {
                 name: "Belts",
-                to: "/product-listing/accessories/#belts"
+                to: "/product-listing/accessories"
             },
             {
                 name: "Wallets",
-                to: "/product-listing/accessories/#wallets"
+                to: "/product-listing/accessories"
             }
         ]
     }
@@ -91,15 +91,15 @@ export const WomenDropdownLinks = [
         links: [
             {
                 name: "All Styles",
-                to: "/product-listing/womens-boots"
+                to: "/product-listing/womens/boots"
             },
             {
                 name: "Lace-Up",
-                to: "/product-listing/womens-boots/#captain"
+                to: "/product-listing/womens/boots"
             },
             {
                 name: "Chelsea",
-                to: "/product-listing/womens-boots/#chelsea"
+                to: "/product-listing/womens/boots"
             }
         ]
     },
@@ -108,23 +108,23 @@ export const WomenDropdownLinks = [
         links: [
             {
                 name: "Shoe Care",
-                to: "/product-listing/accessories/#shoe-care"
+                to: "/product-listing/accessories"
             },
             {
                 name: "Laces",
-                to: "/product-listing/accessories/#laces"
+                to: "/product-listing/accessories"
             },
             {
                 name: "Socks",
-                to: "/product-listing/accessories/#socks"
+                to: "/product-listing/accessories"
             },
             {
                 name: "Belts",
-                to: "/product-listing/accessories/#belts"
+                to: "/product-listing/accessories"
             },
             {
                 name: "Wallets",
-                to: "/product-listing/accessories/#wallets"
+                to: "/product-listing/accessories"
             },
         ]
     }

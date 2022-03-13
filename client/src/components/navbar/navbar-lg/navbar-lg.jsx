@@ -7,9 +7,9 @@ import { DropDown } from "../dropdown/dropdown"
 
 import { MenDropdownLinks, WomenDropdownLinks } from "../data"
 
-const NavbarLg = props => {
+const NavbarLg = () => {
     return (
-        <nav className={`navbar${props.active ? " active" : ""}`}>
+        <nav className={`navbar`}>
             <ul className="navbar__left">
                 <li className="navbar__left-link men">
                     men <AiOutlineDown />

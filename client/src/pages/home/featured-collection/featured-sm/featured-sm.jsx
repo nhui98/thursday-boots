@@ -31,7 +31,7 @@ const Featuredsm = () => {
                     </div>
                 </div>
 
-                <Link to={`/product-listing/mens-boots`} className="button">
+                <Link to={`/product-listing/mens/boots`} className="button">
                     shop men's boots
                 </Link>
             </div>
@@ -59,7 +59,7 @@ const Featuredsm = () => {
                     </div>
                 </div>
 
-                <Link to={`/product-listing/womens-boots`} className="button">
+                <Link to={`/product-listing/womens/boots`} className="button">
                     shop men's boots
                 </Link>
             </div>

@@ -4,19 +4,19 @@ export const SitemapLinks = [
         links: [
             {
                 name: "men's boots",
-                to: "/product-listing/mens-boots"
+                to: "/product-listing/mens/boots"
             },
             {
                 name: "women's boots",
-                to: "/product-listing/womens-boots"
+                to: "/product-listing/womens/boots"
             },
             {
                 name: "men's sneakers",
-                to: "/product-listing/mens-sneakers"
+                to: "/product-listing/mens/sneakers"
             },
             {
                 name: "men's shoes",
-                to: "/product-listing/mens-shoes"
+                to: "/product-listing/mens/shoes"
             }
         ]
     },

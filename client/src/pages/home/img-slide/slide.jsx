@@ -13,11 +13,11 @@ const INITIAL_STATE = {
             btns: [
                 {
                     text: "shop men",
-                    to: "/product-listing/mens-boots"
+                    to: "/product-listing/mens/boots"
                 },
                 {
                     text: "shop women",
-                    to: "/product-listing/mens-boots",
+                    to: "/product-listing/womens/boots",
                 }
             ]
         },
@@ -29,7 +29,7 @@ const INITIAL_STATE = {
             btns: [
                 {
                     text: "shop women's",
-                    to: "/product-listing/womens-boots"
+                    to: "/product-listing/womens/boots"
                 }
             ]
         },
@@ -41,7 +41,7 @@ const INITIAL_STATE = {
             btns: [
                 {
                     text: "shop the low top",
-                    to: "/product-listing/mens-sneakers"
+                    to: "/product-listing/mens/sneakers"
                 }
             ]
         },

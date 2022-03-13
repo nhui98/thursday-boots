@@ -79,7 +79,7 @@ const ProductCard = () => {
     return (
         <div className="product-card">
             <a href="/" className="product-card__image">
-                <img src="images/feature-product1.webp" alt=""/>
+                <img src="/images/feature-product1.webp" alt=""/>
             </a>
             <div className="details">
                 <div className="details-left">
