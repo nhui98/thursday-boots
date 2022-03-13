@@ -65,8 +65,8 @@ const SlideImg = ({ slideNumber, slide, index }) => {
 
     return (
         <figure className={`slide__wrapper${slideType}${isActive}`}>
-            <img src={`${slide.largeSrc}`} alt={slide.name} className="hidden-sm" />
-            <img src={`${slide.smallSrc}`} alt={slide.name} className="hidden-lg visible-sm" />
+            <img src={`${slide.largeSrc}`} alt={slide.name} className="slide__img-large" />
+            <img src={`${slide.smallSrc}`} alt={slide.name} className="slide__img-small" />
             <figcaption className="slide__wrapper-card">
                 {slide.title}
                 {slide.subtitle}
