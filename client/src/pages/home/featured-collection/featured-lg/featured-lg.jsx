@@ -1,5 +1,7 @@
 import React, { useState } from "react"
-import ProductCard from "../product-card/product-card"
+import ProductCard from "../../../../components/product-card/product-card"
+
+import {homeFeaturedMenData, homeFeaturedWomenData} from "../../data"
 
 const Featuredlg = () => {
     const [featureToggle, setFeatureToggle] = useState(true)
@@ -16,74 +18,38 @@ const Featuredlg = () => {
             </div>
 
             <div className="featured__products-container">
-                <div className={`featured__products men${featureToggle ? " active": ""}`}>
-                    <ProductCard
-                        src={`images/feature-product1.webp`}
-                        src2={`images/feature-product1-hover.webp`}
-                        alt={`feature product 1`}
-                        name="captain"
-                        color="black matte"
-                        price="199"
-                    />
-                    <ProductCard
-                        src={`images/feature-product1.webp`}
-                        src2={`images/feature-product1-hover.webp`}
-                        alt={`feature product 1`}
-                        name="captain"
-                        color="black matte"
-                        price="199"
-                    />
-                    <ProductCard
-                        src={`images/feature-product1.webp`}
-                        src2={`images/feature-product1-hover.webp`}
-                        alt={`feature product 1`}
-                        name="captain"
-                        color="black matte"
-                        price="199"
-                    />
-                    <ProductCard
-                        src={`images/feature-product1.webp`}
-                        src2={`images/feature-product1-hover.webp`}
-                        alt={`feature product 1`}
-                        name="captain"
-                        color="black matte"
-                        price="199"
-                    />
+                <div className={`featured__products men${featureToggle ? " active" : ""}`}>
+                    {
+                        homeFeaturedMenData.map((product, i) => {
+                            return (
+                                <ProductCard key={`product-card-${i}`}
+                                    name={product.name}
+                                    color={product.color}
+                                    price={product.price}
+                                    src={product.src}
+                                    src2={product.src2}
+                                    to={product.to}
+                                />
+                            )
+                        })
+                    }
                 </div>
 
                 <div className={`featured__products women${featureToggle ? "": " active"}`}>
-                    <ProductCard
-                        src={`images/feature-product2.webp`}
-                        src2={`images/feature-product2-hover.webp`}
-                        alt={`feature product 1`}
-                        name="captain"
-                        color="black matte"
-                        price="199"
-                    />
-                    <ProductCard
-                        src={`images/feature-product2.webp`}
-                        src2={`images/feature-product2-hover.webp`}
-                        alt={`feature product 1`}
-                        name="captain"
-                        color="black matte"
-                        price="199"
-                    />
-                    <ProductCard
-                        src={`images/feature-product2.webp`}
-                        src2={`images/feature-product2-hover.webp`}
-                        alt={`feature product 1`}
-                        name="captain"
-                        color="black matte"
-                        price="199"
-                    />
-                    <ProductCard
-                        src={`images/feature-product2.webp`}
-                        src2={`images/feature-product2-hover.webp`}
-                        alt={`feature product 1`}
-                        name="captain"
-                        color="black matte"
-                        price="199"
-                    />
+                    {
+                        homeFeaturedWomenData.map((product, i) => {
+                            return (
+                                <ProductCard key={`product-card-${i}`}
+                                    name={product.name}
+                                    color={product.color}
+                                    price={product.price}
+                                    src={product.src}
+                                    src2={product.src2}
+                                    to={product.to}
+                                />
+                            )
+                        })
+                    }
                 </div>
             </div>
         </section>
