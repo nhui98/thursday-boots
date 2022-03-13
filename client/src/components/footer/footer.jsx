@@ -1,67 +1,80 @@
-import React from "react"
-
+import React, { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { FaInstagram, FaFacebookSquare, FaTwitter, FaPinterestSquare, FaYoutube } from "react-icons/fa"
 
 import "./footer.scss"
 
+import { SitemapLinks as data} from "./data"
+
 const Newsletter = () => {
+    const [email, setEmail] = useState("")
+    const navigate = useNavigate()
+
+    const formHandler = e => {
+        e.preventDefault()
+        navigate(`/register${email ? `?${email}` : ""}`)
+    }
+
     return (
         <div className="newsletter">
-            <form className="signup-box">
+            <form className="signup-box" onSubmit={e => formHandler(e)}>
                 <label htmlFor="signup-input">Register for early access & exclusive deals</label>
                 <div className="signup">
-                    <input className="signup-input" id="signup-input" placeholder="email@example.com"></input>
-                    <button type="submit" className="signup-btn">join the team</button>
+                    <input type="email" className="signup-input" id="signup-input" placeholder="email@example.com" onChange={e => setEmail(e.target.value)} />
+                    <button type="submit" className="button signup-btn">join the team</button>
                 </div>
             </form>
             <ul className="social-links">
-                <li className="social-link"><FaInstagram /></li>
-                <li className="social-link"><FaFacebookSquare /></li>
-                <li className="social-link"><FaTwitter /></li>
-                <li className="social-link"><FaPinterestSquare /></li>
-                <li className="social-link"><FaYoutube /></li>
+                <li className="social-link">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><FaInstagram /></a>
+                </li>
+                <li className="social-link">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><FaFacebookSquare /></a>
+                </li>
+                <li className="social-link">
+                    <a href="https://www.twitter.com/" target="_blank" rel="noreferrer"><FaTwitter /></a>
+                </li>
+                <li className="social-link">
+                    <a href="https://www.pinterest.com/" target="_blank" rel="noreferrer"><FaPinterestSquare /></a>
+                </li>
+                <li className="social-link">
+                    <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><FaYoutube /></a>
+                </li>
             </ul>
         </div>
     )
 }
 
-const SitemapLinks = () => {
+const SitemapLinks = ({ links }) => {
     return (
         <ul className="sitemap-links">
-            <p>shop</p>
-            <li className="sitemap-link">
-                <a href="/">men's boots</a>
-            </li>
-            <li className="sitemap-link">
-                <a href="/">women's boots</a>
-            </li>
-            <li className="sitemap-link">
-                <a href="/">men's sneakers</a>
-            </li>
-            <li className="sitemap-link">
-                <a href="/">men's shoes</a>
-            </li>
-            <li className="sitemap-link">
-                <a href="/">accessories</a>
-            </li>
+            <p>{links.category}</p>
+            {
+                links.links.map((link, i) => {
+                    return (
+                        <li className="sitemap-link" key={`sitemaplink-${i}`}>
+                            <Link to={link.to}>{link.name}</Link>
+                        </li>
+                    )
+                })
+            }
         </ul>
     )
 }
 
-const Sitemap = () => {
-    return (
-        <div className="sitemap">
-            <SitemapLinks />
-            <SitemapLinks />
-            <SitemapLinks />
-        </div>
-    )
-}
 
 const Footer = () => {
     return (
         <footer className="footer">
-            <Sitemap />
+            <div className="sitemap">
+                {
+                    data.map((links, i) => {
+                        return (
+                            <SitemapLinks key={`sitemaplinks-${i}`} links={links} />
+                        )
+                    })
+                }
+            </div>
             <Newsletter />
         </footer>
     )

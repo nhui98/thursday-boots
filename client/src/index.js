@@ -4,9 +4,6 @@ import { BrowserRouter } from "react-router-dom"
 
 import App from "./App";
 
-import "./styles/variables.scss"
-import "./styles/global.scss"
-
 ReactDom.render(
     <BrowserRouter>
         <App />
