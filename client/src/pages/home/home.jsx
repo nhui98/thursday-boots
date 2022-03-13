@@ -1,13 +1,14 @@
 import React from "react"
+
+import Slide from "./img-slide/slide"
 import CategoryGrid from "./category-grid/category-grid"
 import Featured from "./featured-collection/featured"
 
 import "./home.scss"
-import Slide from "./img-slide/slide"
 
 const Home = () => {
     return (
-        <main className="home" id="home">
+        <main className="home">
             <Slide />
             <CategoryGrid />
             <Featured />

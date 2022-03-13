@@ -1,82 +1,107 @@
-import React, { useState } from "react";
-import Button from "../../../components/button/button";
+import React, { useReducer } from "react";
+import { Link } from "react-router-dom"
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 
+const INITIAL_STATE = {
+    slideNumber: 1,
+    slideDetails: [
+        {
+            largeSrc: "/images/home1.webp",
+            smallSrc: "/images/home1-small.webp",
+            title: <h1>highest quality.<br />honest prices.</h1>,
+            subtitle: <p>handcrafted with integrity</p>,
+            btns: [
+                {
+                    text: "shop men",
+                    to: "/product-listing/mens-boots"
+                },
+                {
+                    text: "shop women",
+                    to: "/product-listing/mens-boots",
+                }
+            ]
+        },
+        {
+            largeSrc: "/images/home2.webp",
+            smallSrc: "/images/home2-small.webp",
+            title: <h1>everyday<br />favourites</h1>,
+            subtitle: <p>the dutches chelsea boot in<br />dark olive weathersafe suede</p>,
+            btns: [
+                {
+                    text: "shop women's",
+                    to: "/product-listing/womens-boots"
+                }
+            ]
+        },
+        {
+            largeSrc: "/images/home3.webp",
+            smallSrc: "/images/home3-small.webp",
+            title: <h1>year round<br />essentials</h1>,
+            subtitle: <p>the premier low top in<br />luxe white nappa leather</p>,
+            btns: [
+                {
+                    text: "shop the low top",
+                    to: "/product-listing/mens-sneakers"
+                }
+            ]
+        },
+    ]
+}
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case "increment":
+            return state.slideNumber < 3 ? { ...state, slideNumber: state.slideNumber + 1 }: state
+        case "decrement":
+            return state.slideNumber > 1 ? {...state, slideNumber: state.slideNumber - 1} : state
+        default:
+            return state
+    }
+}
+
+const SlideImg = ({ slideNumber, slide, index }) => {
+    const isActive = slideNumber === index ? " active" : ""
+    const slideType = index % 2 === 0 ? " even" : " odd"
+
+    return (
+        <figure className={`slide__wrapper${slideType}${isActive}`}>
+            <img src={`${slide.largeSrc}`} alt={slide.name} className="hidden-sm" />
+            <img src={`${slide.smallSrc}`} alt={slide.name} className="hidden-lg visible-sm" />
+            <figcaption className="slide__wrapper-card">
+                {slide.title}
+                {slide.subtitle}
+                <div className="call-to-action">
+                    {
+                        slide.btns.map((btn, i) => {
+                            return (
+                                <Link to={btn.to} className="button" key={`btn-${i}`}>{btn.text}</Link>
+                            )
+                        })
+                    }
+                </div>
+            </figcaption>
+        </figure>
+    )
+}
+
 const Slide = () => {
-    const [slideNumber, setSlideNumber] = useState(1)
-
-    const incrementSlide = () => {
-        slideNumber < 3 ? setSlideNumber(prevState => prevState + 1) : setSlideNumber(1)
-    }
-
-    const decrementSlide = () => {
-        slideNumber > 1 ? setSlideNumber(prevState => prevState - 1) : setSlideNumber(3)
-    }
+    const [{slideNumber, slideDetails}, dispatch] = useReducer(reducer, INITIAL_STATE)
 
     return (
         <section className="slide">
-            <div className={"left"} onClick={() => decrementSlide()}>
+            <div className={"left"} onClick={() => dispatch({ type: "decrement"})}>
                 <AiOutlineLeft />
             </div>
 
-            <figure className={`slide__wrapper one${slideNumber === 1? " active" : ""}`}>
-                <img src="/images/home1.webp" alt="slide 1" className="hidden-sm" />
-                <img src="/images/home1-small.webp" alt="slide 1" className="hidden-lg visible-sm" />
-                <figcaption className="slide__wrapper-card">
-                    <h1>
-                        highest quality.
-                        <br />
-                        honest prices.
-                    </h1>
-                    <p>handcrafted with integrity</p>
-                    <div className="call-to-action">
-                        <Button text="shop men" />
-                        <Button text="shop women" />
-                    </div>
-                </figcaption>
-            </figure>
+            {
+                slideDetails.map((slide, i) => {
+                    return (
+                        <SlideImg slideNumber={slideNumber} slide={slide} index={i + 1} key={`slide-${i}`} />
+                    )
+                })
+            }
 
-            <figure className={`slide__wrapper two${slideNumber === 2 ? " active" : ""}`}>
-                <img src="/images/home2.webp" alt="slide 2" className="hidden-sm" />
-                <img src="/images/home2-small.webp" alt="slide 2" className="hidden-lg visible-sm" />
-                <figcaption className="slide__wrapper-card">
-                    <h1>
-                        everyday
-                        <br />
-                        favourites
-                    </h1>
-                    <p>
-                        the dutches chelsea boot in
-                        <br />
-                        dark olive weathersafe<sup>TM</sup> suede
-                    </p>
-                    <div className="call-to-action">
-                        <Button text="shop women's boots" />
-                    </div>
-                </figcaption>
-            </figure>
-
-            <figure className={`slide__wrapper three${slideNumber === 3 ? " active" : ""}`}>
-                <img src="/images/home3.webp" alt="slide 3" className="hidden-sm" />
-                <img src="/images/home3-small.webp" alt="slide 3" className="hidden-lg visible-sm" />
-                <figcaption className="slide__wrapper-card">
-                    <h1>
-                        year-round
-                        <br />
-                        essentials
-                    </h1>
-                    <p>
-                        the premier low top in
-                        <br />
-                        luxe white nappa leather
-                    </p>
-                    <div className="call-to-action">
-                        <Button text="shop the low top" />
-                    </div>
-                </figcaption>
-            </figure>
-
-            <div className="right" onClick={() => incrementSlide()}>
+            <div className="right" onClick={() => dispatch({type: "increment"})}>
                 <AiOutlineRight />
             </div>
 
