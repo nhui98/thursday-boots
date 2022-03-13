@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
-import Button from "../../../../components/button/button";
+import SliderCard from "../../../../components/slider-card/slider-card";
+
+import { homeFeaturedMenData, homeFeaturedWomenData } from "../../data"
 
 const Featuredsm = () => {
     return (
@@ -12,42 +15,25 @@ const Featuredsm = () => {
 
                 <div className="imgslider-container">
                     <div className="imgslider">
-                        <div className="imgslider-img">
-                            <img src="images/sliderimg1.webp" alt="slider1" />     
-                            <div className="imgslider-details">
-                                <div className="imgslider-details-name">Captain</div>
-                                <div className="imgslider-details-color">matte black</div>
-                                <div className="imgslider-details-price">£199</div>
-                            </div>
-                        </div>
-                        <div className="imgslider-img">
-                            <img src="images/sliderimg1.webp" alt="slider1" />      
-                            <div className="imgslider-details">
-                                <div className="imgslider-details-name">Captain</div>
-                                <div className="imgslider-details-color">matte black</div>
-                                <div className="imgslider-details-price">£199</div>
-                            </div>
-                        </div>
-                        <div className="imgslider-img">
-                            <img src="images/sliderimg1.webp" alt="slider1" />  
-                            <div className="imgslider-details">
-                                <div className="imgslider-details-name">Captain</div>
-                                <div className="imgslider-details-color">matte black</div>
-                                <div className="imgslider-details-price">£199</div>
-                            </div>
-                        </div>
-                        <div className="imgslider-img">
-                            <img src="images/sliderimg1.webp" alt="slider1" />   
-                            <div className="imgslider-details">
-                                <div className="imgslider-details-name">Captain</div>
-                                <div className="imgslider-details-color">matte black</div>
-                                <div className="imgslider-details-price">£199</div>
-                            </div>
-                        </div>
+                        {
+                            homeFeaturedMenData.map((product, i) => {
+                                return (
+                                    <SliderCard key={`slider-card-${i}`}
+                                        src={product.src}
+                                        name={product.name}
+                                        color={product.color}
+                                        price={product.price}
+                                        to={product.to}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
 
-                <Button text="shop men's boots"/>
+                <Link to={`/product-listing/mens-boots`} className="button">
+                    shop men's boots
+                </Link>
             </div>
 
             <div className="imgslider__wrapper">
@@ -57,42 +43,25 @@ const Featuredsm = () => {
 
                 <div className="imgslider-container">
                     <div className="imgslider">
-                        <div className="imgslider-img">
-                            <img src="images/sliderimg2.webp" alt="slider1" />     
-                            <div className="imgslider-details">
-                                <div className="imgslider-details-name">Captain</div>
-                                <div className="imgslider-details-color">matte black</div>
-                                <div className="imgslider-details-price">£199</div>
-                            </div>
-                        </div>
-                        <div className="imgslider-img">
-                            <img src="images/sliderimg2.webp" alt="slider1" />      
-                            <div className="imgslider-details">
-                                <div className="imgslider-details-name">Captain</div>
-                                <div className="imgslider-details-color">matte black</div>
-                                <div className="imgslider-details-price">£199</div>
-                            </div>
-                        </div>
-                        <div className="imgslider-img">
-                            <img src="images/sliderimg2.webp" alt="slider1" />  
-                            <div className="imgslider-details">
-                                <div className="imgslider-details-name">Captain</div>
-                                <div className="imgslider-details-color">matte black</div>
-                                <div className="imgslider-details-price">£199</div>
-                            </div>
-                        </div>
-                        <div className="imgslider-img">
-                            <img src="images/sliderimg2.webp" alt="slider1" />   
-                            <div className="imgslider-details">
-                                <div className="imgslider-details-name">Captain</div>
-                                <div className="imgslider-details-color">matte black</div>
-                                <div className="imgslider-details-price">£199</div>
-                            </div>
-                        </div>
+                    {
+                            homeFeaturedWomenData.map((product, i) => {
+                                return (
+                                    <SliderCard key={`slider-card-${i}`}
+                                        src={product.src}
+                                        name={product.name}
+                                        color={product.color}
+                                        price={product.price}
+                                        to={product.to}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
 
-                <Button text="shop women's boots"/>
+                <Link to={`/product-listing/womens-boots`} className="button">
+                    shop men's boots
+                </Link>
             </div>
         </section>
     )
