@@ -6,8 +6,8 @@ const INITIAL_STATE = {
     slideNumber: 1,
     slideDetails: [
         {
-            largeSrc: "/images/home1.webp",
-            smallSrc: "/images/home1-small.webp",
+            largeSrc: "/images/home/home1.webp",
+            smallSrc: "/images/home/home1-small.webp",
             title: <h1>highest quality.<br />honest prices.</h1>,
             subtitle: <p>handcrafted with integrity</p>,
             btns: [
@@ -22,8 +22,8 @@ const INITIAL_STATE = {
             ]
         },
         {
-            largeSrc: "/images/home2.webp",
-            smallSrc: "/images/home2-small.webp",
+            largeSrc: "/images/home/home2.webp",
+            smallSrc: "/images/home/home2-small.webp",
             title: <h1>everyday<br />favourites</h1>,
             subtitle: <p>the dutches chelsea boot in<br />dark olive weathersafe suede</p>,
             btns: [
@@ -34,8 +34,8 @@ const INITIAL_STATE = {
             ]
         },
         {
-            largeSrc: "/images/home3.webp",
-            smallSrc: "/images/home3-small.webp",
+            largeSrc: "/images/home/home3.webp",
+            smallSrc: "/images/home/home3-small.webp",
             title: <h1>year round<br />essentials</h1>,
             subtitle: <p>the premier low top in<br />luxe white nappa leather</p>,
             btns: [

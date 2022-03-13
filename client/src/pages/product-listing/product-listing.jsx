@@ -1,13 +1,16 @@
 import React from "react"
+import { useParams } from "react-router-dom"
 
 import "./product-listing.scss"
 
 const ProductListing = () => {
+    const {catgeory, style} = useParams()
+    
     return (
         <>
         <main className="productlisting">
             <aside className="sidenav-container">
-                <aside className="sidenav">
+                <div className="sidenav">
                     <h2 className="sidenav-title">boots</h2>
                     <ul className="sidenav-links">
                         <li className="sidenav-link">
@@ -26,12 +29,12 @@ const ProductListing = () => {
                             <a href="/">Lace-up</a>
                         </li>
                     </ul>
-                    </aside>
+                </div>
             </aside>
 
             <section className="plisting">
                 <header className="header">
-                    <img src="/images/listingimg1.webp" alt="" />
+                    <img src="/images/home/listingimg1.webp" alt="" />
                     <div className="title-card">
                         <h2 className="title">
                             mens boots
@@ -79,7 +82,7 @@ const ProductCard = () => {
     return (
         <div className="product-card">
             <a href="/" className="product-card__image">
-                <img src="/images/feature-product1.webp" alt=""/>
+                <img src="/images/home/feature-product1.webp" alt=""/>
             </a>
             <div className="details">
                 <div className="details-left">
