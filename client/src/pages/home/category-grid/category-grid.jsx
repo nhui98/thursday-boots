@@ -1,37 +1,40 @@
 import React from "react"
+import { Link } from "react-router-dom"
+
+import { homeCategoryGridData as data} from "../data"
 
 const CategoryGrid = () => {
     return (
         <section className="categorygrid">
             <div className="grid">
-                <a href={`/`} className="grid__item one">
-                    <img src="/images/category1.webp" alt="category 1" />
-                    <h2 className="grid__item-title">men's boots</h2>
-                </a>
-                <a href={`/`} className="grid__item two">
-                    <img src="/images/category2.webp" alt="category 2" />
-                    <h2 className="grid__item-title">women's boots</h2>
-                </a>
-                <a href={`/`} className="grid__item three">
-                    <img src="/images/category3.webp" alt="category 3" />
-                    <p className="grid__item-title">dress shoes</p>
-                </a>
-                <a href={`/`} className="grid__item four">
-                    <img src="/images/category4.webp" alt="category 4" />
-                    <p className="grid__item-title">men's jackets</p>   
-                </a>
-                <a href={`/`} className="grid__item five">
-                    <img src="/images/category5.webp" alt="category 5" />
-                    <p className="grid__item-title">men's sneakers</p>             
-                </a>
-                <a href={`/`} className="grid__item six">
-                    <img src="/images/category6.webp" alt="category 6" />
-                    <p className="grid__item-title">women's lace-ups</p>
-                </a>
-                <a href={`/`} className="grid__item seven">
-                    <img src="/images/category7.webp" alt="category 7" />
-                    <p className="grid__item-title">high heels</p>
-                </a>
+                <Link to={data[0].to} className="grid__item one">
+                    <img src={data[0].src} alt={data[0].name} />
+                    <h2 className="grid__item-title">{data[0].text}</h2>
+                </Link>
+                <Link to={data[1].to} className="grid__item two">
+                    <img src={data[1].src} alt={data[1 ].name} />
+                    <h2 className="grid__item-title">{data[1].text}</h2>
+                </Link>
+                <Link to={data[2].to} className="grid__item three">
+                    <img src={data[2].src} alt={data[2].name} />
+                    <p className="grid__item-title">{data[2].text}</p>
+                </Link>
+                <Link to={data[3].to} className="grid__item four">
+                    <img src={data[3].src} alt={data[3].name} />
+                    <p className="grid__item-title">{data[3].text}</p>   
+                </Link>
+                <Link to={data[4].to} className="grid__item five">
+                    <img src={data[4].src} alt={data[4].name} />
+                    <p className="grid__item-title">{data[4].text}</p>             
+                </Link>
+                <Link to={data[5].to} className="grid__item six">
+                    <img src={data[5].src} alt={data[5].name} />
+                    <p className="grid__item-title">{data[5].text}</p>
+                </Link>
+                <Link to={data[6].to} className="grid__item seven">
+                    <img src={data[6].src} alt={data[6].name} />
+                    <p className="grid__item-title">{data[6].text}</p>
+                </Link>
             </div>
         </section>
     )

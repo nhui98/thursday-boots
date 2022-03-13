@@ -21,6 +21,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      row-gap: 1.5rem;
 
       position: absolute;
       top: 0;
@@ -38,7 +39,6 @@
       p {
         color: var(--color-white);
         text-transform: capitalize;
-        margin: 1.5rem 0;
         font-weight: 400;
         letter-spacing: 0.04em;
         text-align: center;
