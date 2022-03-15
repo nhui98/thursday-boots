@@ -20,13 +20,13 @@ const NavbarSm = () => {
                     }}>
                         <GiHamburgerMenu />
                     </div>
-                    <div className="navbarsm__left-search hidden-xs"><BiSearch /></div>
+                    <div className="navbarsm__left-search"><BiSearch /></div>
                 </div>
                 <div className="navbarsm__center">
                     <Link to="/" className="navbarsm__center-title logo">Khao</Link>
                 </div>
                 <div className="navbarsm__right">
-                    <div className="navbarsm__right-account hidden-xs"><MdOutlineAccountCircle /></div>
+                    <div className="navbarsm__right-account"><MdOutlineAccountCircle /></div>
                     <div className="navbarsm__right-basket"><BiShoppingBag /></div>
                 </div>
             </nav>

@@ -74,3 +74,18 @@
     display: flex;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .navbarsm {
+    .navbarsm__left {
+      .navbarsm__left-search {
+        display: none;
+      }
+    }
+    .navbarsm__right {
+      .navbarsm__right-account {
+        display: none;
+      }
+    }
+  }
+}
