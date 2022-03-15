@@ -13,36 +13,31 @@
   }
 }
 
-.product__details {
+.productdetails__details {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
   width: 50%;
   padding-right: 4rem;
 
-  .product__details-name {
+  .productdetails__details-name {
     text-transform: capitalize;
     letter-spacing: 0.04em;
-    line-height: 1.5;
     font-size: 2.5rem;
-  }
-
-  .product__details-price {
-    line-height: 1.5;
   }
 
   .product__details-color {
     text-transform: capitalize;
-    line-height: 1.5;
   }
 
-  .variation {
+  .productdetails__details-variation {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     row-gap: 0.5rem;
     column-gap: 0.5rem;
 
-    .variation-img {
+    .productdetails__details-variation-img {
       border: 1px solid rgba(0, 0, 0, 0.1);
       transition: all 0.5s;
       cursor: pointer;
@@ -55,40 +50,41 @@
     }
   }
 
-  .product__details-sizes {
-    p {
-      letter-spacing: 0.02em;
-    }
+  .productdetails__sizes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    row-gap: 1rem;
+    column-gap: 0.5rem;
 
-    .size-grid {
+    .productdetails__sizes-size {
       display: flex;
-      flex-wrap: wrap;
-      margin: 1rem 0;
-      row-gap: 1rem;
-      column-gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--color-offwhite);
+      width: 3rem;
+      height: 3rem;
+      text-align: center;
+      transition: all 0.5s;
+      cursor: pointer;
 
-      .size {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid var(--color-offwhite);
-        width: 3rem;
-        height: 3rem;
-        text-align: center;
-        transition: all 0.5s;
-        cursor: pointer;
-
-        &:hover {
-          background-color: var(--color-offwhite);
-        }
+      &:hover {
+        background-color: var(--color-offwhite);
       }
     }
   }
 
-  .shipping-info {
+  .productdetails-btn {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      background-color: rgba($color: #f2f2f2, $alpha: 1);
+    }
+  }
+
+  .productdetails-shipping-info {
     text-transform: capitalize;
-    line-height: 1.5;
-    text-align: center;
+    font-size: 0.75rem;
   }
 }
 

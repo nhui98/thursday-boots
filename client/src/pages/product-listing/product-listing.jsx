@@ -19,71 +19,74 @@ const ProductListing = () => {
 
     return (
         <>
-        <main className="productlisting">
-            <aside className="productlisting__sidenav-container">
-                <div className="productlisting__sidenav">
-                    <h2 className="productlisting__sidenav-title">{params.style}</h2>
-                        <ul className="productlisting__sidenav-links">
-                            {
-                                data &&
-                                Object.keys(data).map((type, i) => {
-                                    return (
-                                        <li className="productlisting__sidenav-link" key={`productlisting__sidenav-link-${i}`}>
-                                            <a href="/">{data[type][0].name}</a>
-                                        </li>
-                                    )
-                                })
-                            }
-                    </ul>
-                </div>
-            </aside>
+        {
+            !data ? (<div className="loading">Loading</div>) :
+            (
+            <>
+                <main className="productlisting">
+                    <aside className="productlisting__sidenav-container">
+                        <div className="productlisting__sidenav">
+                            <h2 className="productlisting__sidenav-title">{params.style}</h2>
+                                <ul className="productlisting__sidenav-links">
+                                    {
+                                        Object.keys(data).map((type, i) => {
+                                            return (
+                                                <li className="productlisting__sidenav-link" key={`productlisting__sidenav-link-${i}`}>
+                                                    <a href="/">{data[type][0].name}</a>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                            </ul>
+                        </div>
+                    </aside>
 
-            <section className="productlisting__body">
-                <header className="productlisting__body-header">
-                    <img src="/images/home/listingimg1.webp" alt="" />
-                    <div className="productlisting__body-title-wrapper">
-                        <h2 className="productlisting__body-title">
-                            mens boots
-                        </h2>
-                        <p className="productlisting__body-sub-title">
-                            highest quality. honest prices
-                        </p>
-                    </div>
-                </header>
-                
-                    <div className="productlisting__cards-container">
-                        {
-                            data &&
-                            Object.keys(data).map((type, i) => {
-                                return (
-                                    <div className="productlisting__card-container" key={`products-container-${i}`}>
-                                        <p className="productlisting__card-title">{data[type][0].name}</p>
-                                        <div className="product__cards-wrapper">
+                    <section className="productlisting__body">
+                        <header className="productlisting__body-header">
+                            <img src="/images/home/listingimg1.webp" alt="" />
+                            <div className="productlisting__body-title-wrapper">
+                                <h2 className="productlisting__body-title">
+                                    mens boots
+                                </h2>
+                                <p className="productlisting__body-sub-title">
+                                    highest quality. honest prices
+                                </p>
+                            </div>
+                        </header>
+                        
+                            <div className="productlisting__cards-container">
+                                {
+                                    Object.keys(data).map((type, i) => {
+                                        return (
+                                            <div className="productlisting__card-container" key={`products-container-${i}`}>
+                                                <p className="productlisting__card-title">{data[type][0].name}</p>
+                                                <div className="product__cards-wrapper">
 
-                                        <div className="product__cards-container">
-                                                {
-                                                    data[type].map((product, i) => {
-                                                        return (
-                                                            <ProductCard product={product} key={`productcard-${i}`} />
-                                                        )
-                                                    })
-                                                }
+                                                <div className="product__cards-container">
+                                                        {
+                                                            data[type].map((product, i) => {
+                                                                return (
+                                                                    <ProductCard product={product} key={`productcard-${i}`} />
+                                                                )
+                                                            })
+                                                        }
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                )
-                            })          
-                        }
-                </div>
-            </section>
-        </main>
-            
-
-        <section className="productlisting__faq">
-            <h2 className="productlisting__faq-title">have a question?</h2>
-            <p>No problem! we're here to help. click the link for assistance.</p>
-            <Link to="/faq" className="button productlisting__faq-button">FAQ</Link>
-        </section>
+                                        )
+                                    })          
+                                }
+                        </div>
+                    </section>
+                </main>
+                <section className="productlisting__faq">
+                    <h2 className="productlisting__faq-title">have a question?</h2>
+                    <p>No problem! we're here to help. click the link for assistance.</p>
+                    <Link to="/faq" className="button productlisting__faq-button">FAQ</Link>
+                </section>
+            </>
+            )
+        }
         </>
     )
 }

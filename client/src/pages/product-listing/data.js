@@ -9,21 +9,21 @@ export const productData = {
                     to: "/product-details/mens/boots/captain/black",            
                     mainImg: "/images/mens/boots/captain/black/main.webp",
                     altImg: [
-                        {
-                            src: "/images/mens/boots/captain/black/alt1.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/captain/black/alt2.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/captain/black/alt3.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/captain/black/alt4.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/captain/black/alt5.webp"
-                        },
+                        { src: "/images/mens/boots/captain/black/alt1.webp" },
+                        { src: "/images/mens/boots/captain/black/alt2.webp" },
+                        { src: "/images/mens/boots/captain/black/alt3.webp" },
+                        { src: "/images/mens/boots/captain/black/alt4.webp" },
+                        { src: "/images/mens/boots/captain/black/alt5.webp" },
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 },
                 {
@@ -33,18 +33,10 @@ export const productData = {
                     mainImg: "/images/mens/boots/captain/grey/main.webp",
                     to: "/product-details/mens/boots/captain/grey",                   
                     altImg: [
-                        {
-                            src: "/images/mens/boots/captain/grey/alt1.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/captain/grey/alt2.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/captain/grey/alt3.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/captain/grey/alt4.webp"
-                        },
+                        { src: "/images/mens/boots/captain/grey/alt1.webp" },
+                        { src: "/images/mens/boots/captain/grey/alt2.webp" },
+                        { src: "/images/mens/boots/captain/grey/alt3.webp" },
+                        { src: "/images/mens/boots/captain/grey/alt4.webp" },
                     ]
                 }
             ],
