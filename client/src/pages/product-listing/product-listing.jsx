@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { productData } from "./data"
 
@@ -8,6 +8,8 @@ const ProductListing = () => {
     const params = useParams()
     const navigate = useNavigate()
     const category = productData[params.category] 
+
+    const testref = useRef()
 
     useEffect(() => {
         if (!category || !category[params.style]) {
