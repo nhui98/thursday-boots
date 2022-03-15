@@ -7,9 +7,10 @@ import { DropDown } from "../dropdown/dropdown"
 
 import { MenDropdownLinks, WomenDropdownLinks } from "../data"
 
-const NavbarLg = () => {
+const NavbarLg = props => {
+    console.log(props);
     return (
-        <nav className={`navbar`}>
+        <nav className={`navbar${props.variant ? " variant": ""}`}>
             <ul className="navbar__left">
                 <li className="navbar__left-link men">
                     men <AiOutlineDown />

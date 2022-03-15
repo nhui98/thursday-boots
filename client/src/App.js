@@ -11,12 +11,16 @@ import ProductListing from "./pages/product-listing/product-listing"
 const App = () => {
     return (
         <div className="thursday">
-            <Navbar />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/product-listing" element={<ProductListing />} />
-                <Route path="/product-listing/:category/:style" element={<ProductListing />} />
-                <Route path="/product-details/:category/:style/:type/:color" element={<ProductDetails /> } />
+                <Route path="/" element={<Navbar variant />} >
+                    <Route index element={<Home />} />
+                </Route>
+                <Route path="/product-listing/:category/:style" element={<Navbar />} >
+                    <Route index element={<ProductListing />} />
+                </Route>
+                <Route path="/product-details/:category/:style/:type/:color" element={<Navbar />} >
+                    <Route index element={<ProductDetails />} />
+                </Route>
             </Routes>
             <Footer /> 
         </div>

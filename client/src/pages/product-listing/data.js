@@ -17,7 +17,7 @@ export const productData = {
                     ],
                     sizes: [
                         { size: 6, stock: 100 },
-                        { size: 7, stock: 100 },
+                        { size: 7, stock: 0 },
                         { size: 8, stock: 100 },
                         { size: 9, stock: 100 },
                         { size: 10, stock: 100 },
@@ -37,6 +37,16 @@ export const productData = {
                         { src: "/images/mens/boots/captain/grey/alt2.webp" },
                         { src: "/images/mens/boots/captain/grey/alt3.webp" },
                         { src: "/images/mens/boots/captain/grey/alt4.webp" },
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 }
             ],
@@ -48,9 +58,17 @@ export const productData = {
                     to: "/product-details/mens/boots/chelsea/black",
                     mainImg: "/images/mens/boots/chelsea/black/main.webp",
                     altImg: [
-                        {
-                            src: "/images/mens/boots/chelsea/black/alt1.webp"
-                        }
+                        { src: "/images/mens/boots/chelsea/black/alt1.webp" }
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 },
                 {
@@ -60,12 +78,18 @@ export const productData = {
                     to: "/product-details/mens/boots/chelsea/grey",                           
                     mainImg: "/images/mens/boots/chelsea/grey/main.webp",
                     altImg: [
-                        {
-                            src: "/images/mens/boots/chelsea/grey/alt1.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/chelsea/grey/alt2.webp"
-                        }
+                        { src: "/images/mens/boots/chelsea/grey/alt1.webp" },
+                        { src: "/images/mens/boots/chelsea/grey/alt2.webp" }
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 }
             ],
@@ -77,12 +101,18 @@ export const productData = {
                     mainImg: "/images/mens/boots/chukka/black/main.webp",
                     to: "/product-details/mens/boots/chukka/black",            
                     altImg: [
-                        {
-                            src: "/images/mens/boots/chukka/black/alt1.webp"
-                        },
-                        {
-                            src: "/images/mens/boots/chukka/black/alt2.webp"
-                        }
+                        { src: "/images/mens/boots/chukka/black/alt1.webp" },
+                        { src: "/images/mens/boots/chukka/black/alt2.webp" }
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 },
                 {
@@ -92,9 +122,17 @@ export const productData = {
                     to: "/product-details/mens/boots/chukka/blue",                              
                     mainImg: "/images/mens/boots/chukka/blue/main.webp",
                     altImg: [
-                        {
-                            src: "/images/mens/boots/chukka/blue/alt1.webp"
-                        }
+                        { src: "/images/mens/boots/chukka/blue/alt1.webp" }
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 }
             ]
@@ -108,12 +146,18 @@ export const productData = {
                     to: "/product-details/mens/sneakers/lowtops/black",            
                     mainImg: "/images/mens/sneakers/lowtops/black/main.webp",
                     altImg: [
-                        {
-                            src: "/images/mens/sneakers/lowtops/black/alt1.webp"
-                        },
-                        {
-                            src: "/images/mens/sneakers/lowtops/black/alt2.webp"
-                        },
+                        { src: "/images/mens/sneakers/lowtops/black/alt1.webp" },
+                        { src: "/images/mens/sneakers/lowtops/black/alt2.webp" },
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 },
                 {
@@ -123,12 +167,18 @@ export const productData = {
                     to: "/product-details/mens/sneakers/lowtops/white",            
                     mainImg: "/images/mens/sneakers/lowtops/white/main.webp",
                     altImg: [
-                        {
-                            src: "/images/mens/sneakers/lowtops/white/alt1.webp"
-                        },
-                        {
-                            src: "/images/mens/sneakers/lowtops/white/alt2.webp"
-                        },
+                        { src: "/images/mens/sneakers/lowtops/white/alt1.webp" },
+                        { src: "/images/mens/sneakers/lowtops/white/alt2.webp" },
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 }
             ],
@@ -140,13 +190,19 @@ export const productData = {
                     to: "/product-details/mens/sneakers/hightops/white",            
                     mainImg: "/images/mens/sneakers/hightops/white/main.webp",
                     altImg: [
-                        {
-                            src: "/images/mens/sneakers/hightops/white/alt1.webp"
-                        },
-                        {
-                            src: "/images/mens/sneakers/hightops/white/alt2.webp"
-                        },
-                        ]
+                        { src: "/images/mens/sneakers/hightops/white/alt1.webp" },
+                        { src: "/images/mens/sneakers/hightops/white/alt2.webp" },
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
+                    ]
                 }
             ]
         },
@@ -159,6 +215,16 @@ export const productData = {
                     to: "/product-details/mens/shoes/dress/black",            
                     mainImg: "/images/mens/shoes/dress/black/main.webp",
                     altImg: [
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 }
             ],
@@ -170,6 +236,16 @@ export const productData = {
                     to: "/product-details/mens/shoes/loafers/brown",
                     mainImg: "/images/mens/shoes/loafers/brown/main.webp",
                     altImg: [
+                    ],
+                    sizes: [
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
+                        { size: 12, stock: 100 },
+                        { size: 13, stock: 100 },
                     ]
                 }
             ]
@@ -184,9 +260,17 @@ export const productData = {
                     color: "black",
                     mainImg: "/images/womens/boots/chelsea/black/main.webp",
                     altImg: [
-                        {
-                            src: "/images/womens/boots/chelsea/black/alt1.webp"
-                        }
+                        { src: "/images/womens/boots/chelsea/black/alt1.webp" }
+                    ],
+                    sizes: [
+                        { size: 4, stock: 100 },
+                        { size: 5, stock: 100 },
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
                     ]
                 },
                 {
@@ -195,9 +279,17 @@ export const productData = {
                     color: "brown",
                     mainImg: "/images/womens/boots/chelsea/brown/main.webp",
                     altImg: [
-                        {
-                            src: "/images/womens/boots/chelsea/brown/alt1.webp"
-                        }
+                        { src: "/images/womens/boots/chelsea/brown/alt1.webp" }
+                    ],
+                    sizes: [
+                        { size: 4, stock: 100 },
+                        { size: 5, stock: 100 },
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
                     ]
                 }
             ],
@@ -210,8 +302,19 @@ export const productData = {
                             color: "black",
                             mainImg: "/images/womens/boots/heels/black/main.webp",
                             altImg: [
-                            ]
+                            ],
+                            
                         },
+                    ],
+                    sizes: [
+                        { size: 4, stock: 100 },
+                        { size: 5, stock: 100 },
+                        { size: 6, stock: 100 },
+                        { size: 7, stock: 100 },
+                        { size: 8, stock: 100 },
+                        { size: 9, stock: 100 },
+                        { size: 10, stock: 100 },
+                        { size: 11, stock: 100 },
                     ]
                 }
             ]

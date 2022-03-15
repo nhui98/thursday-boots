@@ -7,6 +7,14 @@ import "./product-details.scss"
 const ProductDetails = () => {
     const [productType, setProductType] = useState(null)
     const [productDetails, setProductDetails] = useState(null)
+    const [valid, setValid] = useState(true)
+    const [details, setDetails] = useState({
+        name: "",
+        price: 0,
+        color: "",
+        size: 0,
+    })
+
     const params = useParams()
     const navigate = useNavigate()
     
@@ -14,11 +22,29 @@ const ProductDetails = () => {
         if (!params.category || !params.style || !params.type || !params.color) {
             navigate(-1)
         } else {
-            setProductType(productData[params.category][params.style][params.type])
-            setProductDetails(productData[params.category][params.style][params.type].filter((product) => product.color === params.color)[0])
+            const t = productData[params.category][params.style][params.type]
+            const t2 = t.filter(product => product.color === params.color)[0]
+            setProductType(t)
+            setProductDetails(t2)
+            setDetails({
+                name: t2.name,
+                price: t2.price,
+                color: t2.color,
+                size: 0,
+            })
         }
 
     }, [params, navigate])
+
+    const addToCartHandler = () => {
+        if (!details.size || details.size === 0) {
+            setValid(false)
+        } else {
+            setValid(true)
+            //Add to cart logic
+            console.log(details);
+        }
+    }
 
     return (
         <>
@@ -31,7 +57,7 @@ const ProductDetails = () => {
                                 <img src={productDetails.mainImg} alt={`${productDetails.name} ${productDetails.color}`} />
                             </div>
                         </div>
-                        <div className="productdetails__details">
+                        <form className="productdetails__details">
                             <h2 className="productdetails__details-name">{productDetails.name}</h2>
                             <div className="productdetails__details-price">£{productDetails.price}</div>
                             <div className="product__details-color">color: {productDetails.color}</div>
@@ -53,7 +79,9 @@ const ProductDetails = () => {
                                         productDetails.sizes &&
                                         productDetails.sizes.map((size, i) => {
                                             return size.stock > 0 ? (
-                                                <div className="productdetails__sizes-size" key={`size-${i}`}>
+                                                <div className={`productdetails__sizes-size${details.size === size.size ? " selected" : ""}`} key={`size-${i}`} onClick={() => setDetails(prevState => {
+                                                    return { ...prevState, size: size.size }
+                                                })}>
                                                     {size.size}
                                                 </div>
                                             ) : (
@@ -66,13 +94,18 @@ const ProductDetails = () => {
                                 </div>
                             </div>
 
-                            <div className="button productdetails-btn">
+                            {
+                                !valid && 
+                                <div className="error">Please select a size</div>
+                            }
+
+                            <div className="button productdetails-btn" onClick={() => addToCartHandler()}>
                                 add to cart
                             </div>
                             <div className="productdetails-shipping-info">
                                 free shipping on orders over £250
                             </div>
-                        </div>
+                        </form>
                     </main >
                 )
             }
