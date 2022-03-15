@@ -8,6 +8,7 @@ export const productData = {
                     {
                         color: "black matte",
                         mainImg: "/images/mens/boots/captain/black/main.webp",
+                        to: "/product-details/mens/boots/captain/black",            
                         altImg: [
                             {
                                 src: "/images/mens/boots/captain/black/alt1.webp"
@@ -28,7 +29,108 @@ export const productData = {
                     },
                     {
                         color: "grey",
-                        mainImg:  "/images/mens/boots/captain/grey/main.webp",
+                        mainImg: "/images/mens/boots/captain/grey/main.webp",
+                        to: "/product-details/mens/boots/captain/grey",                   
+                        altImg: [
+                            {
+                                src: "/images/mens/boots/captain/grey/alt1.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt2.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt3.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt4.webp"
+                            },
+                        ]
+                    }
+                    ,
+                    {
+                        color: "grey",
+                        mainImg: "/images/mens/boots/captain/grey/main.webp",
+                        to: "/product-details/mens/boots/captain/grey",                   
+                        altImg: [
+                            {
+                                src: "/images/mens/boots/captain/grey/alt1.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt2.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt3.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt4.webp"
+                            },
+                        ]
+                    }
+                    ,
+                    {
+                        color: "grey",
+                        mainImg: "/images/mens/boots/captain/grey/main.webp",
+                        to: "/product-details/mens/boots/captain/grey",                   
+                        altImg: [
+                            {
+                                src: "/images/mens/boots/captain/grey/alt1.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt2.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt3.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt4.webp"
+                            },
+                        ]
+                    }
+                    ,
+                    {
+                        color: "grey",
+                        mainImg: "/images/mens/boots/captain/grey/main.webp",
+                        to: "/product-details/mens/boots/captain/grey",                   
+                        altImg: [
+                            {
+                                src: "/images/mens/boots/captain/grey/alt1.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt2.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt3.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt4.webp"
+                            },
+                        ]
+                    }
+                    ,
+                    {
+                        color: "grey",
+                        mainImg: "/images/mens/boots/captain/grey/main.webp",
+                        to: "/product-details/mens/boots/captain/grey",                   
+                        altImg: [
+                            {
+                                src: "/images/mens/boots/captain/grey/alt1.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt2.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt3.webp"
+                            },
+                            {
+                                src: "/images/mens/boots/captain/grey/alt4.webp"
+                            },
+                        ]
+                    }
+                    ,
+                    {
+                        color: "grey",
+                        mainImg: "/images/mens/boots/captain/grey/main.webp",
+                        to: "/product-details/mens/boots/captain/grey",                   
                         altImg: [
                             {
                                 src: "/images/mens/boots/captain/grey/alt1.webp"
@@ -53,6 +155,7 @@ export const productData = {
                     {
                         color: "black",
                         mainImg: "/images/mens/boots/chelsea/black/main.webp",
+                        to: "/product-details/mens/boots/chelsea/black",            
                         altImg: [
                             {
                                 src: "/images/mens/boots/chelsea/black/alt1.webp"
@@ -61,7 +164,8 @@ export const productData = {
                     },
                     {
                         color: "grey",
-                        mainImg:  "/images/mens/boots/chelsea/grey/main.webp",
+                        mainImg: "/images/mens/boots/chelsea/grey/main.webp",
+                        to: "/product-details/mens/boots/chelsea/grey",                           
                         altImg: [
                             {
                                 src: "/images/mens/boots/chelsea/grey/alt1.webp"
@@ -80,6 +184,7 @@ export const productData = {
                     {
                         color: "black",
                         mainImg: "/images/mens/boots/chukka/black/main.webp",
+                        to: "/product-details/mens/boots/chukka/black",            
                         altImg: [
                             {
                                 src: "/images/mens/boots/chukka/black/alt1.webp"
@@ -91,7 +196,8 @@ export const productData = {
                     },
                     {
                         color: "blue",
-                        mainImg:  "/images/mens/boots/chukka/blue/main.webp",
+                        mainImg: "/images/mens/boots/chukka/blue/main.webp",
+                        to: "/product-details/mens/boots/chukka/blue",                              
                         altImg: [
                             {
                                 src: "/images/mens/boots/chukka/blue/alt1.webp"
@@ -101,7 +207,7 @@ export const productData = {
                 ]
             },
         ],
-        sneaker: [
+        sneakers: [
             {
                 name: "lowtops",
                 price: "120",
@@ -109,6 +215,8 @@ export const productData = {
                     {
                         color: "black",
                         mainImg: "/images/mens/sneakers/lowtops/black/main.webp",
+                        to: "/product-details/mens/sneakers/lowtops/black",            
+
                         altImg: [
                             {
                                 src: "/images/mens/sneakers/lowtops/black/alt1.webp"
@@ -121,6 +229,8 @@ export const productData = {
                     {
                         color: "white",
                         mainImg: "/images/mens/sneakers/lowtops/white/main.webp",
+                        to: "/product-details/mens/sneakers/lowtops/white",            
+
                         altImg: [
                             {
                                 src: "/images/mens/sneakers/lowtops/white/alt1.webp"
@@ -139,6 +249,7 @@ export const productData = {
                     {
                         color: "white",
                         mainImg: "/images/mens/sneakers/hightops/white/main.webp",
+                        to: "/product-details/mens/sneakers/hightops/white",            
                         altImg: [
                             {
                                 src: "/images/mens/sneakers/hightops/white/alt1.webp"
@@ -159,6 +270,7 @@ export const productData = {
                     {
                         color: "black",
                         mainImg: "/images/mens/shoes/dress/black/main.webp",
+                        to: "/product-details/mens/shoes/dress/black",            
                         altImg: [
                         ]
                     }
@@ -171,6 +283,7 @@ export const productData = {
                     {
                         color: "brown",
                         mainImg: "/images/mens/shoes/loafers/brown/main.webp",
+                        to: "/product-details/mens/shoes/loafers/brown",            
                         altImg: [
                         ]
                     }
