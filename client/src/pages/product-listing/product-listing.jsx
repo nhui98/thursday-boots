@@ -1,21 +1,21 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { productData } from "./data"
 
 import "./product-listing.scss"
 
 const ProductListing = () => {
+    const [data, setData] = useState({})
     const params = useParams()
     const navigate = useNavigate()
-    const category = productData[params.category] 
-
-    const testref = useRef()
 
     useEffect(() => {
-        if (!category || !category[params.style]) {
+        if (!params.category || !params.style) {
             navigate(-1)
+        } else {
+            setData(productData[params.category][params.style])
         }
-    }, [category, navigate, params])
+    }, [navigate, params])
 
     return (
         <>
@@ -25,11 +25,11 @@ const ProductListing = () => {
                     <h2 className="productlisting__sidenav-title">{params.style}</h2>
                         <ul className="productlisting__sidenav-links">
                             {
-                                category[params.style] &&
-                                category[params.style].map((style, i) => {
+                                data &&
+                                Object.keys(data).map((type, i) => {
                                     return (
                                         <li className="productlisting__sidenav-link" key={`productlisting__sidenav-link-${i}`}>
-                                            <a href="/">{style.name}</a>
+                                            <a href="/">{data[type][0].name}</a>
                                         </li>
                                     )
                                 })
@@ -53,18 +53,18 @@ const ProductListing = () => {
                 
                     <div className="productlisting__cards-container">
                         {
-                            category[params.style] &&
-                            category[params.style].map((style, i) => {
+                            data &&
+                            Object.keys(data).map((type, i) => {
                                 return (
                                     <div className="productlisting__card-container" key={`products-container-${i}`}>
-                                        <p className="productlisting__card-title">{style.name}</p>
+                                        <p className="productlisting__card-title">{data[type][0].name}</p>
                                         <div className="product__cards-wrapper">
 
                                         <div className="product__cards-container">
                                                 {
-                                                    style.color.map((color, i) => {
+                                                    data[type].map((product, i) => {
                                                         return (
-                                                            <ProductCard style={style} color={color} key={`productcard-${i}`} />
+                                                            <ProductCard product={product} key={`productcard-${i}`} />
                                                         )
                                                     })
                                                 }
@@ -88,19 +88,19 @@ const ProductListing = () => {
     )
 }
 
-const ProductCard = ({style, color}) => {
+const ProductCard = ({product}) => {
     return (
         <div className="productlisting__productcard">
-            <Link to={color.to} className="productlisting__productcard-image">
-                <img src={color.mainImg} alt={`${style.name} ${color.color}`}/>
+            <Link to={product.to} className="productlisting__productcard-image">
+                <img src={product.mainImg} alt={`${product.name} ${product.color}`}/>
             </Link>
             <div className="productlisting__productcard-details">
                 <div className="productlisting__productcard-details-left">
-                    <Link to={color.to} className="productlisting__productcard-details-name">{style.name}</Link>
-                    <div className="productlisting__productcard-details-color">{color.color}</div>
+                    <Link to={product.to} className="productlisting__productcard-details-name">{product.name}</Link>
+                    <div className="productlisting__productcard-details-color">{product.color}</div>
                 </div>
                 <div className="productlisting__productcard-details-right">
-                    <div className="productlisting__productcard-details-price">£{style.price}</div>
+                    <div className="productlisting__productcard-details-price">£{product.price}</div>
                 </div>
             </div>
         </div>

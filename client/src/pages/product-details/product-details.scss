@@ -1,19 +1,16 @@
 .productdetails {
-  min-width: 300px;
-}
-
-.details-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   min-height: 100vh;
-}
 
-.product-images {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 50%;
+  .productdetails__images {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+  }
 }
 
 .product__details {

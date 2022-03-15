@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { productData } from "../product-listing/data.js"
 
 import "./product-details.scss"
 
 const ProductDetails = () => {
+    const [productDetails, setProductDetails] = useState({})
+    const [productColorDetails, setProductColorDetails] = useState({})
+    const params = useParams()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (!params.category || !params.style || !params.type || !params.color) {
+            navigate(-1)
+        }
+        
+        setProductDetails(productData[params.category][params.style].filter((product, i) => 
+            product.name === params.type
+        )[0])
+
+    }, [params, navigate])
+
     return (
         <main className="productdetails">
-            <section className="details-container">
-                <div className="product-images">
-                    <div className="main-image">
-                        <img src="/images/feature-product1.webp" alt="" />
+                <div className="productdetails__images">
+                    <div className="productdetails__images-main">
+                        <img src={``} alt="" />
                     </div>
                 </div>
                 <div className="product__details">
-                    <h2 className="product__details-name">Captain</h2>
-                    <div className="product__details-price">£199</div>
+                    <h2 className="product__details-name">{productDetails.name}</h2>
+                    <div className="product__details-price">{productDetails.price}</div>
                     <div className="product__details-color">color: matte black</div>
                     <div className="variation">
                         <div className="variation-img"><img src="/images/feature-product1.webp" alt="" /></div>
@@ -43,7 +60,6 @@ const ProductDetails = () => {
                         free shipping on orders over £250
                      </div>
                 </div>
-            </section>
         </main>
     )
 }
