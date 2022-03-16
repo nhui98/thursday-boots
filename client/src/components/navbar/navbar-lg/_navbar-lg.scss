@@ -50,7 +50,7 @@
 
       .navbar__icons {
         .navbar__icons-search,
-        .navbar__icons-basket {
+        .basket__icon {
           color: var(--color-white);
         }
       }
@@ -90,7 +90,7 @@
 
         .navbar__icons {
           .navbar__icons-search,
-          .navbar__icons-basket {
+          .basket__icon {
             color: var(--color-black);
           }
         }
@@ -182,7 +182,7 @@
       flex-direction: row;
 
       .navbar__icons-search,
-      .navbar__icons-basket {
+      .basket__icon {
         display: flex;
 
         font-size: 1.5rem;

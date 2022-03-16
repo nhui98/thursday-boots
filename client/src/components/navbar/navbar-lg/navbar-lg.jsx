@@ -6,6 +6,7 @@ import { AiOutlineDown } from "react-icons/ai"
 import { DropDown } from "../dropdown/dropdown"
 
 import { MenDropdownLinks, WomenDropdownLinks } from "../data"
+import BasketIcon from "../../basket-icon/basket-icon"
 
 const NavbarLg = props => {
     return (
@@ -39,7 +40,7 @@ const NavbarLg = props => {
                 </ul>
                 <div className="navbar__icons">
                     <div className="navbar__icons-search"><BiSearch /></div>
-                    <div className="navbar__icons-basket"><BiShoppingBag /></div>
+                    <BasketIcon />
                 </div>
             </div>
         </nav>

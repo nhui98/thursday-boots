@@ -5,6 +5,7 @@ import { MdOutlineAccountCircle } from "react-icons/md"
 import { GiHamburgerMenu } from "react-icons/gi"
 
 import Flyout from "../flyout/flyout"
+import BasketIcon from "../../basket-icon/basket-icon"
 
 const NavbarSm = () => {
     const [flyoutToggle, setFlyoutToggle] = useState(false)
@@ -27,7 +28,7 @@ const NavbarSm = () => {
                 </div>
                 <div className="navbarsm__right">
                     <div className="navbarsm__right-account"><MdOutlineAccountCircle /></div>
-                    <div className="navbarsm__right-basket"><BiShoppingBag /></div>
+                    <BasketIcon />
                 </div>
             </nav>
 
