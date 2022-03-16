@@ -14,6 +14,7 @@ const ProductDetails = () => {
         color: "",
         size: 0,
     })
+    const [displayImg, setDisplayImg] = useState("")
 
     const params = useParams()
     const navigate = useNavigate()
@@ -32,6 +33,7 @@ const ProductDetails = () => {
                 color: t2.color,
                 size: 0,
             })
+            setDisplayImg(t2.mainImg)
         }
 
     }, [params, navigate])
@@ -53,9 +55,27 @@ const ProductDetails = () => {
                 (
                     <main className="productdetails">
                         <div className="productdetails__images">
-                            <div className="productdetails__images-main">
-                                <img src={productDetails.mainImg} alt={`${productDetails.name} ${productDetails.color}`} />
-                            </div>
+                            {
+                                productDetails.altImg
+                                && <div className="productdetails__images-alt-wrapper">
+                                    <div className={`productdetails__images-alt${displayImg === productDetails.mainImg ? " selected": ""}`} onClick={() => setDisplayImg(productDetails.mainImg)}>
+                                        <img src={productDetails.mainImg} alt={`${productDetails.name} ${productDetails.color}`} />
+                                    </div>
+                                    {
+                                        productDetails.altImg.map((altImg, i) =>
+                                        <div className={`productdetails__images-alt${displayImg === altImg.src ? " selected": ""}`} key={`alt-img-${i}`} onClick={() => setDisplayImg(altImg.src)}>
+                                            <img src={altImg.src} alt={`${productDetails.name} ${productDetails.color}`} />
+                                        </div>
+                                        )
+                                    }
+                                </div>                              
+                            }
+                            {
+                                displayImg &&
+                                <div className="productdetails__images-main">
+                                    <img src={displayImg} alt={`${productDetails.name} ${productDetails.color}`} />
+                                </div>
+                            }           
                         </div>
                         <form className="productdetails__details">
                             <h2 className="productdetails__details-name">{productDetails.name}</h2>
