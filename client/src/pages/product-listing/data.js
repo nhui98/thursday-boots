@@ -3,6 +3,7 @@ export const productData = {
         boots: {
             captain: [
                 {
+                    id: 1,
                     name: "captain",
                     price: "199",
                     color: "black",
@@ -27,6 +28,7 @@ export const productData = {
                     ]
                 },
                 {
+                    id: 2,
                     name: "captain",
                     price: "199",
                     color: "grey",
@@ -52,6 +54,7 @@ export const productData = {
             ],
             chelsea: [
                 {
+                    id: 3,
                     name: "chelsea",
                     price: "190",
                     color: "black",
@@ -72,6 +75,7 @@ export const productData = {
                     ]
                 },
                 {
+                    id: 4,
                     name: "chelsea",
                     price: "190",
                     color: "grey",
@@ -95,6 +99,7 @@ export const productData = {
             ],
             Chukka: [
                 {
+                    id: 5,
                     name: "chukka",
                     price: "160",
                     color: "black",
@@ -116,6 +121,7 @@ export const productData = {
                     ]
                 },
                 {
+                    id: 6,
                     name: "chukka",
                     price: "160",
                     color: "blue",
@@ -140,6 +146,7 @@ export const productData = {
         sneakers: {
             lowtops: [
                 {
+                    id: 7,
                     name: "lowtops",
                     price: "120",       
                     color: "black",
@@ -161,6 +168,7 @@ export const productData = {
                     ]
                 },
                 {
+                    id: 8,
                     name: "lowtops",
                     price: "120",       
                     color: "white",
@@ -184,6 +192,7 @@ export const productData = {
             ],
             hightops: [
                 {
+                    id: 9,
                     name: "hightops",
                     price: "140",
                     color: "white",
@@ -209,6 +218,7 @@ export const productData = {
         shoes: {
             dress: [
                 {
+                    id: 10,
                     name: "dress",
                     price: "160",
                     color: "black",
@@ -230,6 +240,7 @@ export const productData = {
             ],
             loafers: [
                 {
+                    id: 11,
                     name: "loafers",
                     price: "155",
                     color: "brown",
@@ -255,6 +266,7 @@ export const productData = {
         boots: {
             chelsea: [
                 {
+                    id: 12,
                     name: "chelsea",
                     price: "170",
                     color: "black",
@@ -274,6 +286,7 @@ export const productData = {
                     ]
                 },
                 {
+                    id: 13,
                     name: "chelsea",
                     price: "170",
                     color: "brown",
@@ -295,6 +308,7 @@ export const productData = {
             ],
             heels: [
                 {
+                    id: 14,
                     name: "heels",
                     price: "190",
                     color: [

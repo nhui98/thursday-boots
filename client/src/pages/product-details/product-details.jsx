@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { productData } from "../product-listing/data.js"
 
@@ -9,9 +10,11 @@ const ProductDetails = () => {
     const [productDetails, setProductDetails] = useState(null)
     const [valid, setValid] = useState(true)
     const [details, setDetails] = useState({
+        id: null,
         name: "",
         price: 0,
         color: "",
+        img: "",
         size: 0,
     })
     const [displayImg, setDisplayImg] = useState("")
@@ -24,13 +27,15 @@ const ProductDetails = () => {
             navigate(-1)
         } else {
             const t = productData[params.category][params.style][params.type]
-            const t2 = t.filter(product => product.color === params.color)[0]
+            const t2 = t.find(product => product.color === params.color)
             setProductType(t)
             setProductDetails(t2)
             setDetails({
+                id: t2.id,
                 name: t2.name,
                 price: t2.price,
                 color: t2.color,
+                img: t2.mainImg,
                 size: 0,
             })
             setDisplayImg(t2.mainImg)
@@ -38,13 +43,15 @@ const ProductDetails = () => {
 
     }, [params, navigate])
 
+    const dispatch = useDispatch()
+
     const addToCartHandler = () => {
         if (!details.size || details.size === 0) {
             setValid(false)
         } else {
             setValid(true)
-            //Add to cart logic
-            console.log(details);
+            console.log({...details, quantity: 1});
+            dispatch({type: "ADD_ITEM_TO_BASKET", payload: {...details, quantity: 1}})
         }
     }
 
