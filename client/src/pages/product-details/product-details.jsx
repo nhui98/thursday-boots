@@ -64,7 +64,7 @@ const ProductDetails = () => {
                             <div className="productdetails__details-variation">
                                 {
                                     productType.map((product, i) => 
-                                        <Link to={product.to} key={`variation-img-${i}`} className="productdetails__details-variation-img">
+                                        <Link to={product.to} key={`variation-img-${i}`} className={`productdetails__details-variation-img${product.color === productDetails.color ? " selected" : ""}`}>
                                             <img src={product.mainImg} alt={`${product.name} ${product.color}`} />
                                         </Link>
                                     )

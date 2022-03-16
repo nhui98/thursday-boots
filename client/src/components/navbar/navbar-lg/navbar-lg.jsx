@@ -8,7 +8,6 @@ import { DropDown } from "../dropdown/dropdown"
 import { MenDropdownLinks, WomenDropdownLinks } from "../data"
 
 const NavbarLg = props => {
-    console.log(props);
     return (
         <nav className={`navbar${props.variant ? " variant": ""}`}>
             <ul className="navbar__left">
