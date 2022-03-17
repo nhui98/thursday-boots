@@ -12,7 +12,9 @@ const Delivery = () => {
                 <section className="delivery__basket-small">
                     <CheckoutBasket />
                 </section>
-                hello
+                <div className="delivery__form-body">
+                    
+                </div>
             </section>
             <section className="delivery__basket">
                 <CheckoutBasket />
