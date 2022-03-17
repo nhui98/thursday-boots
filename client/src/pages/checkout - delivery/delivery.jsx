@@ -1,10 +1,15 @@
 import React from "react";
+import CheckoutSteps from "../../components/checkout-steps/checkout-steps";
+
+import "./delivery.scss"
 
 const Delivery = () => {
     return (
-        <div className="delivery">
-            delivery
-        </div>
+        <main className="delivery">
+            <section className="delivery__form">
+                <CheckoutSteps delivery />
+            </section>
+        </main>
     )
 }
 export default Delivery
