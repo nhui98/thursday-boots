@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { AiOutlineRight } from "react-icons/ai"
 
+import "./checkout-steps.scss"
+
 const CheckoutSteps = props => {
     return (
         <div className="checkoutsteps">
