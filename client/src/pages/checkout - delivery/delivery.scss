@@ -7,11 +7,34 @@
     display: flex;
     flex-direction: column;
     width: 50%;
+    row-gap: 2rem;
+
+    .delivery__basket-small {
+      display: none;
+      flex-direction: column;
+      background-color: var(--color-offwhite);
+    }
   }
 
   .delivery__basket {
     width: 50%;
     background-color: var(--color-offwhite);
     border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .delivery {
+    .delivery__form {
+      width: 100%;
+
+      .delivery__basket-small {
+        display: flex;
+      }
+    }
+
+    .delivery__basket {
+      display: none;
+    }
   }
 }

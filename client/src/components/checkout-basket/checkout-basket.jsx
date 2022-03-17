@@ -1,17 +1,31 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useSelector } from "react-redux"
+import { AiOutlineShoppingCart } from "react-icons/ai"
 import "./checkout-basket.scss"
 
 const CheckoutBasket = () => {
-
+    const [basketToggle, setBasketToggle] = useState(false)
     const basket = useSelector(state => state.basket)
 
     return (
         <>
+            <div className="checkoutbasket__accordion">
+                <div className="checkoutbasket__accordion-drop" onClick={() => setBasketToggle(prevState => !prevState)}>
+                    <AiOutlineShoppingCart />
+                    {
+                        basketToggle ?
+                            <>show order summary</> :
+                            <>hide order summary</>
+                    }
+                </div>
+                <div className="checkoutbasket__accordion-totals">
+                    £{basket.total}
+                </div>
+            </div>
             {
             
                 basket && (
-                    <section className="checkoutbasket">
+                    <section className={`checkoutbasket${basketToggle ? " active" : ""}`}>
                         <div className="checkoutbasket__items">
                             {
                                 basket.basketItems.map((item, i) => 

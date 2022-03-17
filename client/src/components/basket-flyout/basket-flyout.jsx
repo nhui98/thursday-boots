@@ -21,6 +21,7 @@ const BasketFlyout = ({ setBasketToggle, basketToggle}) => {
 
     const toCheckoutHandler = () => {
         // check if user logged in?
+        document.body.style.overflowY = "auto"
         navigate("/checkout/delivery")
     }
 

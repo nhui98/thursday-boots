@@ -9,6 +9,10 @@ const Delivery = () => {
         <main className="delivery">
             <section className="delivery__form">
                 <CheckoutSteps delivery />
+                <section className="delivery__basket-small">
+                    <CheckoutBasket />
+                </section>
+                hello
             </section>
             <section className="delivery__basket">
                 <CheckoutBasket />
