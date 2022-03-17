@@ -79,6 +79,22 @@ img {
   color: #d8000c;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s;
+
+  &.active {
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
 @media screen and (max-width: 1450px) {
 }
 
