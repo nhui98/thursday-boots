@@ -1,15 +1,20 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { AiOutlineClose, AiFillLock } from "react-icons/ai"
 
 import "./basket-flyout.scss"
+import { REMOVE_ITEM_FROM_BASKET } from "../../redux/basket/basket-reducers"
 
 const BasketFlyout = ({ setBasketToggle, basketToggle}) => {
     const basket = useSelector(state => state.basket)
+    const dispatch = useDispatch()
 
     const removeFromBasketHandler = (item) => {
-        //remove from basket action
+        dispatch({
+            type: REMOVE_ITEM_FROM_BASKET,
+            payload: item
+        })
     }
 
     return (

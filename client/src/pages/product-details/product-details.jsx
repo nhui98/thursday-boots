@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { ADD_ITEM_TO_BASKET } from "../../redux/basket/basket-reducers.js";
 import { productData } from "../product-listing/data.js"
 
 import "./product-details.scss"
@@ -51,7 +52,10 @@ const ProductDetails = () => {
         } else {
             setValid(true)
             console.log({...details, quantity: 1});
-            dispatch({type: "ADD_ITEM_TO_BASKET", payload: {...details, quantity: 1}})
+            dispatch({
+                type: ADD_ITEM_TO_BASKET,
+                payload: { ...details, quantity: 1 }
+            })
         }
     }
 
