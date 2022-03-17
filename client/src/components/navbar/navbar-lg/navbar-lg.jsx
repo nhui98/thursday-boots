@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { BiSearch, BiShoppingBag } from "react-icons/bi"
+import { BiSearch } from "react-icons/bi"
 import { AiOutlineDown } from "react-icons/ai"
 
 import { DropDown } from "../dropdown/dropdown"
@@ -40,7 +40,7 @@ const NavbarLg = props => {
                 </ul>
                 <div className="navbar__icons">
                     <div className="navbar__icons-search"><BiSearch /></div>
-                    <BasketIcon />
+                    <BasketIcon setBasketToggle={props.setBasketToggle} />
                 </div>
             </div>
         </nav>

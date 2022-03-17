@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import { BiSearch, BiShoppingBag } from "react-icons/bi"
+import { BiSearch } from "react-icons/bi"
 import { MdOutlineAccountCircle } from "react-icons/md"
 import { GiHamburgerMenu } from "react-icons/gi"
 
 import Flyout from "../flyout/flyout"
 import BasketIcon from "../../basket-icon/basket-icon"
 
-const NavbarSm = () => {
+const NavbarSm = ({ setBasketToggle }) => {
     const [flyoutToggle, setFlyoutToggle] = useState(false)
 
     return (
@@ -28,7 +28,7 @@ const NavbarSm = () => {
                 </div>
                 <div className="navbarsm__right">
                     <div className="navbarsm__right-account"><MdOutlineAccountCircle /></div>
-                    <BasketIcon />
+                    <BasketIcon setBasketToggle={setBasketToggle} />
                 </div>
             </nav>
 
