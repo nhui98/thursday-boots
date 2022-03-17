@@ -97,7 +97,7 @@ export const productData = {
                     ]
                 }
             ],
-            Chukka: [
+            chukka: [
                 {
                     id: 5,
                     name: "chukka",

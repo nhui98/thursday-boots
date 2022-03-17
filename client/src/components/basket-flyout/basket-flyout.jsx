@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { AiOutlineClose, AiFillLock } from "react-icons/ai"
 
@@ -15,6 +15,13 @@ const BasketFlyout = ({ setBasketToggle, basketToggle}) => {
             type: REMOVE_ITEM_FROM_BASKET,
             payload: item
         })
+    }
+
+    const navigate = useNavigate()
+
+    const toCheckoutHandler = () => {
+        // check if user logged in?
+        navigate("/checkout/delivery")
     }
 
     return (
@@ -74,7 +81,7 @@ const BasketFlyout = ({ setBasketToggle, basketToggle}) => {
                                 £{basket.total}
                             </div>
                         </div>
-                        <div className="button basketflyout__footer-checkout-btn">
+                        <div className="button basketflyout__footer-checkout-btn" onClick={() => toCheckoutHandler()}>
                             <AiFillLock />
                             checkout
                         </div>
