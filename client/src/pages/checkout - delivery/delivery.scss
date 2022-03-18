@@ -103,6 +103,16 @@ input {
   }
 }
 
+@media screen and (max-width: 1150px) {
+  .delivery {
+    .delivery__form-wrapper {
+      .delivery__form {
+        width: 100%;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 950px) {
   .delivery {
     .delivery__form-wrapper {
@@ -110,8 +120,6 @@ input {
       padding: 1rem 0;
 
       .delivery__form {
-        width: 100%;
-
         .delivery__basket-small {
           display: flex;
         }
