@@ -136,3 +136,19 @@ input {
     display: none;
   }
 }
+
+@media screen and (max-width: 950px) {
+  .delivery {
+    .delivery__form-wrapper {
+      .delivery__form {
+        .delivery__form-shipping {
+          .delivery__form-shipping-name,
+          .delivery__form-shipping-city {
+            flex-direction: column;
+            row-gap: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
