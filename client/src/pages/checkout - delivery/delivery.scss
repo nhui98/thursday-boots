@@ -3,16 +3,82 @@
   width: 100%;
   min-height: 100vh;
 
-  .delivery__form {
+  .delivery__form-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     width: 50%;
-    row-gap: 2rem;
+    padding: 1rem 2rem;
 
-    .delivery__basket-small {
-      display: none;
+    .delivery__form {
+      display: flex;
       flex-direction: column;
-      background-color: var(--color-offwhite);
+      width: 30rem;
+      row-gap: 2rem;
+
+      .delivery__basket-small {
+        display: none;
+        flex-direction: column;
+        background-color: var(--color-offwhite);
+      }
+
+      .delivery__form-contact {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+
+        .delivery__form-contact-text {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: 0.85rem;
+          text-transform: capitalize;
+
+          .delivery__form-contact-label,
+          .delivery__form-contact-login {
+            color: rgba(0, 0, 0, 0.5);
+
+            a {
+              color: #2773aa;
+            }
+          }
+        }
+
+        .delivery__form-email {
+          width: 100%;
+        }
+      }
+
+      .delivery__form-shipping {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+
+        .delivery__form-shipping-label {
+          font-size: 0.85rem;
+          text-transform: capitalize;
+          color: rgba(0, 0, 0, 0.5);
+        }
+
+        .delivery__form-shipping-name {
+          display: flex;
+          column-gap: 0.5rem;
+        }
+
+        .delivery__form-shipping-city {
+          display: flex;
+          column-gap: 0.5rem;
+        }
+      }
+
+      .delivery-btn {
+        margin-top: 2rem;
+        width: 100%;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
     }
   }
 
@@ -23,18 +89,42 @@
   }
 }
 
+input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: all 1s;
+  outline: none;
+
+  &:focus {
+    outline: 1px solid #2773aa;
+    border: 1px solid #2773aa;
+  }
+}
+
 @media screen and (max-width: 950px) {
   .delivery {
-    .delivery__form {
+    .delivery__form-wrapper {
       width: 100%;
+      padding: 1rem 0;
 
-      .delivery__basket-small {
-        display: flex;
+      .delivery__form {
+        width: 100%;
+
+        .delivery__basket-small {
+          display: flex;
+        }
+
+        .delivery__form-contact,
+        .delivery__form-shipping {
+          padding: 1rem 2rem;
+        }
       }
     }
+  }
 
-    .delivery__basket {
-      display: none;
-    }
+  .delivery__basket {
+    display: none;
   }
 }
