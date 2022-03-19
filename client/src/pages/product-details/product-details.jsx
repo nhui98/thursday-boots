@@ -1,73 +1,54 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { ADD_ITEM_TO_BASKET } from "../../redux/basket/basket-reducers.js";
-import { productData } from "../product-listing/data.js"
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { ADD_ITEM_TO_BASKET } from "../../redux/basket/basket-reducers";
+import { getProductDetails } from "../../redux/products/product-actions"
 
 import "./product-details.scss"
 
 const ProductDetails = () => {
-    const [productType, setProductType] = useState(null)
-    const [productDetails, setProductDetails] = useState(null)
     const [valid, setValid] = useState(true)
-    const [details, setDetails] = useState({
-        id: null,
-        name: "",
-        price: 0,
-        color: "",
-        img: "",
-        size: 0,
-    })
-    const [displayImg, setDisplayImg] = useState("")
+    const [selectedSize, setSelectedSize] = useState(0)
+    const [displayImg, setDisplayImg] = useState(null)
 
     const params = useParams()
-    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const {loading, productDetails, error} = useSelector(state => state.product)
     
     useEffect(() => {
-        if (!params.category || !params.style || !params.type || !params.color) {
-            navigate(-1)
-        } else {
-            const t = productData[params.category][params.style][params.type]
-            const t2 = t.find(product => product.color === params.color)
-            setProductType(t)
-            setProductDetails(t2)
-            setDetails({
-                id: t2.id,
-                name: t2.name,
-                price: t2.price,
-                color: t2.color,
-                img: t2.mainImg,
-                size: 0,
-            })
-            setDisplayImg(t2.mainImg)
-        }
+        dispatch(getProductDetails(params.id))
+    }, [params, dispatch])
 
-    }, [params, navigate])
-
-    const dispatch = useDispatch()
 
     const addToCartHandler = () => {
-        if (!details.size || details.size === 0) {
+        if (!selectedSize || selectedSize === 0) {
             setValid(false)
         } else {
             setValid(true)
-            console.log({...details, quantity: 1});
             dispatch({
                 type: ADD_ITEM_TO_BASKET,
-                payload: { ...details, quantity: 1 }
+                payload: {
+                    id: productDetails.id,
+                    style: productDetails.style,
+                    price: productDetails.price,
+                    color: productDetails.color,
+                    img: productDetails.mainImg,
+                    size: selectedSize,
+                    quantity: 1
+                }
             })
         }
     }
 
     return (
         <>
-            { !productDetails || !productType ?
+            { loading ?
                 (<div className="loading">Loading</div>) :
                 (
                     <main className="productdetails">
                         <div className="productdetails__images">
                             {
-                                productDetails.altImg
+                                productDetails.altImg.length > 0
                                 && <div className="productdetails__images-alt-wrapper">
                                     <div className={`productdetails__images-alt${displayImg === productDetails.mainImg ? " selected": ""}`} onClick={() => setDisplayImg(productDetails.mainImg)}>
                                         <img src={productDetails.mainImg} alt={`${productDetails.name} ${productDetails.color}`} />
@@ -75,24 +56,23 @@ const ProductDetails = () => {
                                     {
                                         productDetails.altImg.map((altImg, i) =>
                                         <div className={`productdetails__images-alt${displayImg === altImg.src ? " selected": ""}`} key={`alt-img-${i}`} onClick={() => setDisplayImg(altImg.src)}>
-                                            <img src={altImg.src} alt={`${productDetails.name} ${productDetails.color}`} />
+                                            <img src={altImg.src} alt={`${productDetails.style} ${productDetails.color}`} />
                                         </div>
                                         )
                                     }
                                 </div>                              
                             }
                             {
-                                displayImg &&
                                 <div className="productdetails__images-main">
-                                    <img src={displayImg} alt={`${productDetails.name} ${productDetails.color}`} />
+                                    <img src={!displayImg ? productDetails.mainImg : displayImg} alt={`${productDetails.style} ${productDetails.color}`} />
                                 </div>
                             }           
                         </div>
                         <form className="productdetails__details">
-                            <h2 className="productdetails__details-name">{productDetails.name}</h2>
+                            <h2 className="productdetails__details-name">{productDetails.style}</h2>
                             <div className="productdetails__details-price">£{productDetails.price}</div>
                             <div className="product__details-color">color: {productDetails.color}</div>
-                            <div className="productdetails__details-variation">
+                            {/* <div className="productdetails__details-variation">
                                 {
                                     productType.map((product, i) => 
                                         <Link to={product.to} key={`variation-img-${i}`} className={`productdetails__details-variation-img${product.color === productDetails.color ? " selected" : ""}`}>
@@ -100,19 +80,17 @@ const ProductDetails = () => {
                                         </Link>
                                     )
                                 }
-                            </div>
+                            </div> */}
                             <div className="productdetails__sizes">
                                 <div className="productdetails__sizes-text">
                                     Size (UK): we recommend you order 1/2 size smaller than you wear in sneakers.
                                 </div>
                                 <div className="productdetails__sizes-grid">
                                     {
-                                        productDetails.sizes &&
+                                        productDetails.sizes.length > 0 &&
                                         productDetails.sizes.map((size, i) => {
                                             return size.stock > 0 ? (
-                                                <div className={`productdetails__sizes-size${details.size === size.size ? " selected" : ""}`} key={`size-${i}`} onClick={() => setDetails(prevState => {
-                                                    return { ...prevState, size: size.size }
-                                                })}>
+                                                <div className={`productdetails__sizes-size${selectedSize === size.size ? " selected" : ""}`} key={`size-${i}`} onClick={() => setSelectedSize(size.size)}>
                                                     {size.size}
                                                 </div>
                                             ) : (

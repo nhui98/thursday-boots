@@ -24,7 +24,7 @@ const ProductListing = () => {
                 <main className="productlisting">
                     <aside className="productlisting__sidenav-container">
                         <div className="productlisting__sidenav">
-                            <h2 className="productlisting__sidenav-title">{params.style}</h2>
+                            <h2 className="productlisting__sidenav-title">{params.type}</h2>
                                 <ul className="productlisting__sidenav-links">
                                     {
                                         Object.keys(styles).map((style, i) => {

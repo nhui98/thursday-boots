@@ -2,10 +2,11 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux"
 import thunk from "redux-thunk"
 import { basketReducer } from "./basket/basket-reducers"
 import { deliveryAddressReducer } from "./delivery/delivery-reducers"
-import { productsReducer } from "./products/product-reducers"
+import { productDetailsReducer, productsReducer } from "./products/product-reducers"
 
 const reducers = combineReducers({
     products: productsReducer,
+    product: productDetailsReducer,
     basket: basketReducer,
     delivery: deliveryAddressReducer
 })

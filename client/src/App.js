@@ -29,7 +29,7 @@ const App = () => {
                 <Route path="/product-listing/:category/:type" element={<Navbar />} >
                     <Route index element={<PageWithFooter><ProductListing /></PageWithFooter>} />
                 </Route>
-                <Route path="/product-details/:category/:style/:type/:color" element={<Navbar />} >
+                <Route path="/product-details/:id" element={<Navbar />} >
                     <Route index element={<PageWithFooter><ProductDetails /></PageWithFooter>} />
                 </Route>
                 <Route path="/checkout/delivery" element={<Delivery />} />
