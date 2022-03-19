@@ -3,15 +3,18 @@ import { Link } from "react-router-dom"
 
 import "./product-card.scss"
 
-const ProductCard = ({ src, src2, alt, name, color, price, to }) => {
+const ProductCard = ({ product: {id, category, type, style, price, color, src, src2} }) => {
     return (
         <figure className="productcard">
-            <Link to={`${to}`} className="productcard__image">
-                <img src={src} alt={alt} className="img"/>
-                <img src={src2} alt={alt} className="img-hover"/>
+            <Link to={`/product-details/${id}`} className="productcard__image">
+                <img src={src} alt={`${style} ${color}`} className="img" />
+                {
+                    src2 &&
+                    <img src={src2} alt={`${style} ${color}`} className="img-hover"/>
+                }
             </Link>
             <figcaption className="productcard__details">
-                <Link to={`${to}`} className="productcard__details-name">{name}</Link>
+                <Link to={`/product-details/${id}`} className="productcard__details-name">{style}</Link>
                 <div className="productcard__details-color">{color}</div>
                 <div className="productcard__details-price">£{price}</div>
             </figcaption>

@@ -26,7 +26,7 @@ const App = () => {
                 <Route path="/" element={<Navbar variant />} >
                     <Route index element={<PageWithFooter><Home /></PageWithFooter>} />
                 </Route>
-                <Route path="/product-listing/:category/:style" element={<Navbar />} >
+                <Route path="/product-listing/:category/:type" element={<Navbar />} >
                     <Route index element={<PageWithFooter><ProductListing /></PageWithFooter>} />
                 </Route>
                 <Route path="/product-details/:category/:style/:type/:color" element={<Navbar />} >

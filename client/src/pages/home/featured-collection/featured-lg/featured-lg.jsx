@@ -22,14 +22,7 @@ const Featuredlg = () => {
                     {
                         homeFeaturedMenData.map((product, i) => {
                             return (
-                                <ProductCard key={`product-card-${i}`}
-                                    name={product.name}
-                                    color={product.color}
-                                    price={product.price}
-                                    src={product.src}
-                                    src2={product.src2}
-                                    to={product.to}
-                                />
+                                <ProductCard key={`product-card-${i}`} product={product} />
                             )
                         })
                     }
@@ -39,14 +32,7 @@ const Featuredlg = () => {
                     {
                         homeFeaturedWomenData.map((product, i) => {
                             return (
-                                <ProductCard key={`product-card-${i}`}
-                                    name={product.name}
-                                    color={product.color}
-                                    price={product.price}
-                                    src={product.src}
-                                    src2={product.src2}
-                                    to={product.to}
-                                />
+                                <ProductCard key={`product-card-${i}`} product={product} />
                             )
                         })
                     }

@@ -18,13 +18,7 @@ const Featuredsm = () => {
                         {
                             homeFeaturedMenData.map((product, i) => {
                                 return (
-                                    <SliderCard key={`slider-card-${i}`}
-                                        src={product.src}
-                                        name={product.name}
-                                        color={product.color}
-                                        price={product.price}
-                                        to={product.to}
-                                    />
+                                    <SliderCard key={`slider-card-${i}`} product={product} />
                                 )
                             })
                         }
@@ -46,13 +40,7 @@ const Featuredsm = () => {
                     {
                             homeFeaturedWomenData.map((product, i) => {
                                 return (
-                                    <SliderCard key={`slider-card-${i}`}
-                                        src={product.src}
-                                        name={product.name}
-                                        color={product.color}
-                                        price={product.price}
-                                        to={product.to}
-                                    />
+                                    <SliderCard key={`slider-card-${i}`} product={product} />
                                 )
                             })
                         }

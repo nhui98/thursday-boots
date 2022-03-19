@@ -4,7 +4,7 @@ const { getProducts, getProduct } = require("../controllers/products-controller.
 
 const productRouter = express.Router()
 
-productRouter.get("/products", getProducts)
+productRouter.post("/", getProducts)
 productRouter.get("/product/:id", getProduct)
 
 exports.productRouter = productRouter

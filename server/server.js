@@ -4,9 +4,12 @@ const { productRouter } = require("./routers/products-router.js")
 
 const app = express()
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 5000
 
-app.use("/productsapi", productRouter)
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.use("/api/products", productRouter)
 
 app.get("/", (req, res) => {
     res.send("server online")

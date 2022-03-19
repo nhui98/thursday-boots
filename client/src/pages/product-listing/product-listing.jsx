@@ -1,26 +1,24 @@
-import React, { useEffect, useState } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
-import { productData } from "./data"
+import React, { useEffect } from "react"
+import { Link, useParams } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
 
 import "./product-listing.scss"
+import { getProductList } from "../../redux/products/product-actions"
 
 const ProductListing = () => {
-    const [data, setData] = useState({})
     const params = useParams()
-    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const {loading, productList, styles, error} = useSelector(state => state.products)
 
     useEffect(() => {
-        if (!params.category || !params.style) {
-            navigate(-1)
-        } else {
-            setData(productData[params.category][params.style])
-        }
-    }, [navigate, params])
+        dispatch(getProductList(params.category, params.type))
+    }, [params, dispatch])
 
     return (
         <>
         {
-            !data ? (<div className="loading">Loading</div>) :
+            loading ? (<div className="loading">Loading</div>) :
             (
             <>
                 <main className="productlisting">
@@ -29,10 +27,10 @@ const ProductListing = () => {
                             <h2 className="productlisting__sidenav-title">{params.style}</h2>
                                 <ul className="productlisting__sidenav-links">
                                     {
-                                        Object.keys(data).map((type, i) => {
+                                        Object.keys(styles).map((style, i) => {
                                             return (
                                                 <li className="productlisting__sidenav-link" key={`productlisting__sidenav-link-${i}`}>
-                                                    <a href="/">{data[type][0].name}</a>
+                                                    <a href="/">{style}</a>
                                                 </li>
                                             )
                                         })
@@ -56,18 +54,20 @@ const ProductListing = () => {
                         
                             <div className="productlisting__cards-container">
                                 {
-                                    Object.keys(data).map((type, i) => {
+                                     Object.keys(styles).map((style, i) => {
                                         return (
                                             <div className="productlisting__card-container" key={`products-container-${i}`}>
-                                                <p className="productlisting__card-title">{data[type][0].name}</p>
+                                                <p className="productlisting__card-title">{style}</p>
                                                 <div className="product__cards-wrapper">
 
                                                 <div className="product__cards-container">
                                                         {
-                                                            data[type].map((product, i) => {
-                                                                return (
-                                                                    <ProductCard product={product} key={`productcard-${i}`} />
-                                                                )
+                                                            productList.map((product, i) => {
+                                                                if (product.style === style) {
+                                                                    return (
+                                                                        <ProductCard product={product} key={`productcard-${i}`} />
+                                                                    )
+                                                                }
                                                             })
                                                         }
                                                     </div>
@@ -91,19 +91,19 @@ const ProductListing = () => {
     )
 }
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product: {id, category, type, style, price, color, mainImg }}) => {
     return (
         <div className="productlisting__productcard">
-            <Link to={product.to} className="productlisting__productcard-image">
-                <img src={product.mainImg} alt={`${product.name} ${product.color}`}/>
+            <Link to={`/product-details/${id}`} className="productlisting__productcard-image">
+                <img src={mainImg} alt={`${style} ${color}`}/>
             </Link>
             <div className="productlisting__productcard-details">
                 <div className="productlisting__productcard-details-left">
-                    <Link to={product.to} className="productlisting__productcard-details-name">{product.name}</Link>
-                    <div className="productlisting__productcard-details-color">{product.color}</div>
+                    <Link to={`/product-details/${id}`}className="productlisting__productcard-details-name">{style}</Link>
+                    <div className="productlisting__productcard-details-color">{color}</div>
                 </div>
                 <div className="productlisting__productcard-details-right">
-                    <div className="productlisting__productcard-details-price">£{product.price}</div>
+                    <div className="productlisting__productcard-details-price">£{price}</div>
                 </div>
             </div>
         </div>

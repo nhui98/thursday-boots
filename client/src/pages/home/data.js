@@ -45,70 +45,76 @@ export const homeCategoryGridData = [
 
 export const homeFeaturedMenData = [
     {
-        name: "captain",
+        id: 1,
+        category: "mens",
+        type: "boots",
+        style: "captain",
+        price: 199.00,
         color: "black matte",
-        price: "199",
-        src: "images/home/feature-product1.webp",
-        src2: "images/home/feature-product1-hover.webp",
+        src: "/images/home/feature-product1.webp",
+        src2: "/images/home/feature-product1-hover.webp",
+    },
+    {
+        id: 4,
+        category: "mens",
+        type: "boots",
+        style: "chelsea",
+        price: 190.00,
+        color: "grey",                          
+        src: "/images/home/feature-product2.webp",
+        src2: "/images/home/feature-product2-hover.webp",
+    },
+    {
+        id: 6,
+        category: "mens",
+        type: "boots",
+        style: "chukka",
+        price: 160.00,
+        color: "blue",
+        src: "/images/mens/boots/chukka/blue/main.webp",
+        src2: "/images/mens/boots/chukka/blue/alt1.webp",
         to: "/product-listing/mens/boots"
     },
     {
-        name: "cavalier",
-        color: "shadow grey",
-        price: "190",
-        src: "images/home/feature-product2.webp",
-        src2: "images/home/feature-product2-hover.webp",
-        to: "/product-listing/mens/boots"
-    },
-    {
-        name: "Cadet",
-        color: "walnut",
-        price: "190",
-        src: "images/home/feature-product3.webp",
-        src2: "images/home/feature-product3-hover.webp",
-        to: "/product-listing/mens/boots"
-    },
-    {
-        name: "Wingtip",
-        color: "burgandy",
-        price: "235",
-        src: "images/home/feature-product4.webp",
-        src2: "images/home/feature-product4-hover.webp",
-        to: "/product-listing/mens/boots"
+        id: 7,
+        category: "mens",
+        type: "sneakers",
+        style: "lowtops",
+        price: 120.00,       
+        color: "black",
+        src: "/images/mens/sneakers/lowtops/black/main.webp",
+        src2: "/images/mens/sneakers/lowtops/black/alt1.webp",
     }
 ]
 
 export const homeFeaturedWomenData = [
     {
-        name: "legend",
-        color: "black matte",
-        price: "160",
-        src: "images/home/feature-product5.webp",
-        src2: "images/home/feature-product5-hover.webp",
-        to: "/product-listing/womens/boots"
-    },
-    {
-        name: "knockout",
-        color: "black matte",
-        price: "168",
-        src: "images/home/feature-product6.webp",
-        src2: "images/home/feature-product6-hover.webp",
-        to: "/product-listing/womens/boots"
-    },
-    {
-        name: "captain",
-        color: "black matte",
-        price: "190",
-        src: "images/home/feature-product1-hover.webp",
-        src2: "images/home/feature-product1.webp",
-        to: "/product-listing/womens/boots"
-    },
-    {
-        name: "Combat",
+        id: 12,
+        category: "womens",
+        type: "boots",
+        style: "chelsea",
+        price: 170.00,       
         color: "black",
-        price: "180",
-        src: "images/home/feature-product7.webp",
-        src2: "images/home/feature-product7-hover.webp",
-        to: "/product-listing/womens/boots"
-    }
+        src: "/images/womens/boots/chelsea/black/main.webp",
+        src2: "/images/womens/boots/chelsea/black/alt1.webp",
+    },
+    {
+        id: 13,
+        category: "womens",
+        type: "boots",
+        style: "chelsea",
+        price: 170.00,       
+        color: "brown",
+        src: "/images/womens/boots/chelsea/brown/main.webp",
+        src2: "/images/womens/boots/chelsea/brown/alt1.webp",
+    },
+    {
+        id: 14,
+        category: "womens",
+        type: "boots",
+        style: "heels",
+        price: 190.00,       
+        color: "black",
+        src: "/images/womens/boots/heels/black/main.webp"
+    },
 ]
