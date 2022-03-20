@@ -25,6 +25,15 @@ const CheckoutSteps = props => {
                         </>
                     )
                 }
+                {
+                    props.payment && 
+                    <>
+                        < AiOutlineRight />
+                        <div className="checkoutsteps-step">
+                            Payment
+                        </div>
+                    </>
+                }
             </div>
         </div>
     )

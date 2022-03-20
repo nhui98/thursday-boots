@@ -11,6 +11,7 @@ import ProductListing from "./pages/product-listing/product-listing"
 import Delivery from "./pages/checkout-delivery/delivery"
 import Signin from "./pages/account-signin/signin"
 import Signout from "./pages/account-signout/signout"
+import Payment from "./pages/checkout-payment/payment"
 
 const PageWithFooter = props => {
     return (
@@ -39,6 +40,7 @@ const App = () => {
                 </Route>
                 <Route path="/signout" element={<Signout />} />
                 <Route path="/checkout/delivery" element={<Delivery />} />
+                <Route path="/checkout/payment" element={<Payment />} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </div>

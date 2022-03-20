@@ -9,11 +9,11 @@ import "./delivery.scss"
 
 const Delivery = () => {
     const { deliveryAddress } = useSelector(state => state.deliveryAddress)
-    
-    const [email, setEmail] = useState(deliveryAddress.email ? deliveryAddress.email : "")
+    const { user } = useSelector(state=>state.user)
+    const [email, setEmail] = useState(user.email ? user.email : deliveryAddress.email ? deliveryAddress.email : "")
     const [country, setCountry] = useState(deliveryAddress.country ? deliveryAddress.country : "")
-    const [firstName, setFirstName] = useState(deliveryAddress.firstName ? deliveryAddress.firstName : "")
-    const [lastName, setLastName] = useState(deliveryAddress.lastName ? deliveryAddress.lastName : "")
+    const [firstName, setFirstName] = useState(user.firstName ? user.firstName :deliveryAddress.firstName ? deliveryAddress.firstName : "")
+    const [lastName, setLastName] = useState(user.lastName ? user.lastName :deliveryAddress.lastName ? deliveryAddress.lastName : "")
     const [address, setAddress] = useState(deliveryAddress.address ? deliveryAddress.address : "")
     const [city, setCity] = useState(deliveryAddress.city ? deliveryAddress.city : "")
     const [postcode, setPostcode] = useState(deliveryAddress.postcode ? deliveryAddress.postcode : "")

@@ -1,0 +1,58 @@
+.payment {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+
+  .payment__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+    padding: 1rem 2rem;
+
+    .payment__detailreview {
+      display: flex;
+      flex-direction: column;
+      width: 30rem;
+      row-gap: 1rem;
+
+      .payment__detailreview-contact {
+        margin-top: 3rem;
+      }
+
+      .payment__detailreview-contact,
+      .payment__detailreview-shipping {
+        display: flex;
+        font-size: 0.85rem;
+        width: 100%;
+
+        .payment__detailreview-contact-tag,
+        .payment__detailreview-shipping-tag {
+          text-transform: capitalize;
+          color: rgba(0, 0, 0, 0.6);
+          width: 25%;
+        }
+
+        .payment__detailreview-contact-details,
+        .payment__detailreview-shipping-address {
+          justify-content: flex-start;
+          width: 50%;
+        }
+
+        a {
+          display: flex;
+          justify-content: flex-end;
+          width: 25%;
+          color: var(--color-blue);
+        }
+      }
+    }
+  }
+
+  .payment__basket {
+    width: 50%;
+    background-color: var(--color-offwhite);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}

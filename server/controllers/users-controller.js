@@ -13,6 +13,8 @@ exports.signin = async (req, res, next) => {
             res.send({
                 id: user.id,
                 firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email
             })
         } else {
             res.status(401).send({ message: "Invalid email or password" })
