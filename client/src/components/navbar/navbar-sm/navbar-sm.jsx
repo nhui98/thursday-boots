@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { BiSearch } from "react-icons/bi"
-import { MdOutlineAccountCircle } from "react-icons/md"
 import { GiHamburgerMenu } from "react-icons/gi"
 
 import Flyout from "../flyout/flyout"
@@ -27,7 +26,6 @@ const NavbarSm = ({ setBasketToggle }) => {
                     <Link to="/" className="navbarsm__center-title logo">Khao</Link>
                 </div>
                 <div className="navbarsm__right">
-                    <div className="navbarsm__right-account"><MdOutlineAccountCircle /></div>
                     <BasketIcon setBasketToggle={setBasketToggle} />
                 </div>
             </nav>

@@ -6,8 +6,11 @@ import { BiSearch } from "react-icons/bi"
 import Accordion from "../accordion/accordion"
 
 import { MenDropdownLinks, WomenDropdownLinks } from "../../../data/data"
+import { useSelector, useStore } from "react-redux"
 
 const Flyout = ({ flyoutToggle, setFlyoutToggle }) => {
+
+    const {user} = useSelector(state=>state.user)
     return (
         <aside className={`navflyout${flyoutToggle ? " active" : ""}`}>
             <header className="navflyout__header">
@@ -35,9 +38,17 @@ const Flyout = ({ flyoutToggle, setFlyoutToggle }) => {
                     <li className="navflyout__body-link">
                         <Link to="/help">help</Link>
                     </li>
-                    <li className="navflyout__body-link">
-                        <Link to="/my-account">account</Link>
-                    </li>
+                    {
+                        user ? (
+                            <li className="navflyout__body-link">
+                                <Link to="/logout">logout</Link>
+                             </li>
+                        ) : (
+                            <li className="navflyout__body-link">
+                                <Link to="/login">login</Link>
+                            </li>
+                        )
+                    }
                 </ul>
             </section>
         </aside>

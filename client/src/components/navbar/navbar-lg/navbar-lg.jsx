@@ -7,8 +7,11 @@ import { DropDown } from "../dropdown/dropdown"
 
 import { MenDropdownLinks, WomenDropdownLinks } from "../../../data/data"
 import BasketIcon from "../../basket-icon/basket-icon"
+import { useSelector } from "react-redux"
 
 const NavbarLg = props => {
+
+    const { user } = useSelector(state => state.user)
     return (
         <nav className={`navbar${props.variant ? " variant": ""}`}>
             <ul className="navbar__left">
@@ -34,9 +37,19 @@ const NavbarLg = props => {
                     <li className="navbar__right-link">
                         <Link to={`/help`}>help</Link>
                     </li>
-                    <li className="navbar__right-link">
-                        <Link to={`/my-account`}>account</Link>
-                    </li>
+                    {
+                        user ? (
+                            <li className="navbar__right-link">
+                                <Link to={`/logout`}>logout</Link>
+                            </li>
+                        ) :
+                            (
+                                <li className="navbar__right-link">
+                                <Link to={`/signin`}>signin</Link>
+                            </li>
+                        )
+                    }
+
                 </ul>
                 <div className="navbar__icons">
                     <div className="navbar__icons-search"><BiSearch /></div>

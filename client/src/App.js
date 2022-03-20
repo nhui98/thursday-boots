@@ -8,7 +8,9 @@ import Footer from "./components/footer/footer"
 import Home from "./pages/home/home"
 import ProductDetails from "./pages/product-details/product-details"
 import ProductListing from "./pages/product-listing/product-listing"
-import Delivery from "./pages/checkout - delivery/delivery"
+import Delivery from "./pages/checkout-delivery/delivery"
+import Signin from "./pages/account-signin/signin"
+import Signout from "./pages/account-signout/signout"
 
 const PageWithFooter = props => {
     return (
@@ -32,6 +34,10 @@ const App = () => {
                 <Route path="/product-details/:id" element={<Navbar />} >
                     <Route index element={<PageWithFooter><ProductDetails /></PageWithFooter>} />
                 </Route>
+                <Route path="/signin" element={<Navbar />} >
+                    <Route index element={<PageWithFooter><Signin /></PageWithFooter>} />
+                </Route>
+                <Route path="/signout" element={<Signout />} />
                 <Route path="/checkout/delivery" element={<Delivery />} />
             </Routes>
         </div>

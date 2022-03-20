@@ -29,7 +29,7 @@ const CheckoutBasket = () => {
                         <div className="checkoutbasket__items">
                             {
                                 basket.basketItems.map((item, i) => 
-                                    <div className="checkoutbasket__item">
+                                    <div className="checkoutbasket__item" key={`basket-item-${i}`}>
                                         <div className="checkoutbasket__item-img">
                                             <img src={item.img} alt={`${item.name} ${item.color}`} />
                                             <div className="checkoutbasket__item-quantity-wrapper">
