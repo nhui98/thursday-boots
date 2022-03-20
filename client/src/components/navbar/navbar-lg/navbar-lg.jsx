@@ -40,7 +40,7 @@ const NavbarLg = props => {
                     {
                         user ? (
                             <li className="navbar__right-link">
-                                <Link to={`/logout`}>logout</Link>
+                                <Link to={`/signout`}>logout</Link>
                             </li>
                         ) :
                             (

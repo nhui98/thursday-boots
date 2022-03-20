@@ -15,10 +15,18 @@ export const signin = (email, password) => async dispatch => {
             type: SIGNIN_SUCCESS,
             payload: data
         })
+
+        localStorage.setItem("user", JSON.stringify(data))
     } catch (error) {   
         dispatch({
             type: SIGNIN_FAILURE,
             payload: error.message
         })
     }
+}
+
+export const signout = () => async (dispatch, getState) => {
+    dispatch({ type: SIGNIN_SIGNOUT })
+
+    localStorage.removeItem("user")
 }

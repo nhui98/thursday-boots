@@ -1,5 +1,5 @@
 import React from "react"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 
 import "./App.scss"
 
@@ -39,6 +39,7 @@ const App = () => {
                 </Route>
                 <Route path="/signout" element={<Signout />} />
                 <Route path="/checkout/delivery" element={<Delivery />} />
+                <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </div>
     )

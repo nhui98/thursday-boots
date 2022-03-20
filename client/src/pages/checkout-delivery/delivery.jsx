@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import CheckoutBasket from "../../components/checkout-basket/checkout-basket";
 import CheckoutSteps from "../../components/checkout-steps/checkout-steps";
-import { SET_DELIVERY_ADDRESS } from "../../redux/delivery/delivery-reducers";
+import { setDeliveryAddress } from "../../redux/delivery/delivery-actions";
 
 import "./delivery.scss"
 
 const Delivery = () => {
-    const [email, setEmail] = useState("")
-    const [country, setCountry] = useState("")
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
-    const [address, setAddress] = useState("")
-    const [city, setCity] = useState("")
-    const [postcode, setPostcode] = useState("")
-    const [phone, setPhone] = useState("")
+    const { deliveryAddress } = useSelector(state => state.deliveryAddress)
+    
+    const [email, setEmail] = useState(deliveryAddress.email ? deliveryAddress.email : "")
+    const [country, setCountry] = useState(deliveryAddress.country ? deliveryAddress.country : "")
+    const [firstName, setFirstName] = useState(deliveryAddress.firstName ? deliveryAddress.firstName : "")
+    const [lastName, setLastName] = useState(deliveryAddress.lastName ? deliveryAddress.lastName : "")
+    const [address, setAddress] = useState(deliveryAddress.address ? deliveryAddress.address : "")
+    const [city, setCity] = useState(deliveryAddress.city ? deliveryAddress.city : "")
+    const [postcode, setPostcode] = useState(deliveryAddress.postcode ? deliveryAddress.postcode : "")
+    const [phone, setPhone] = useState(deliveryAddress.phone ? deliveryAddress.phone : "")
 
     const [isEmailValid, setIsEmailValid] = useState(true)
     const [isCountryValid, setIsCountryValid] = useState(true)
@@ -35,19 +37,16 @@ const Delivery = () => {
         //handle form validation
 
         if (isEmailValid && isCountryValid && isFirstNameValid && isLastNameValid && isAddressValid && isCityValid && isPostcodeValid && isPhoneValid) {
-            dispatch({
-                type: SET_DELIVERY_ADDRESS,
-                payload: {
-                    firstName,
-                    lastName,
-                    email,
-                    country,
-                    address,
-                    city,
-                    postcode,
-                    phone
-                }
-            })
+            dispatch(setDeliveryAddress({
+                firstName,
+                lastName,
+                email,
+                country,
+                address,
+                city,
+                postcode,
+                phone
+            }))
             navigate("/checkout/payment")
         }
     }

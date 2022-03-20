@@ -4,17 +4,14 @@ import { useDispatch, useSelector } from "react-redux"
 import { AiOutlineClose, AiFillLock } from "react-icons/ai"
 
 import "./basket-flyout.scss"
-import { REMOVE_ITEM_FROM_BASKET } from "../../redux/basket/basket-reducers"
+import { removeItemFromBasket } from "../../redux/basket/basket-actions"
 
 const BasketFlyout = ({ setBasketToggle, basketToggle}) => {
     const basket = useSelector(state => state.basket)
     const dispatch = useDispatch()
 
     const removeFromBasketHandler = (item) => {
-        dispatch({
-            type: REMOVE_ITEM_FROM_BASKET,
-            payload: item
-        })
+        dispatch(removeItemFromBasket(item))
     }
 
     const navigate = useNavigate()
@@ -79,7 +76,9 @@ const BasketFlyout = ({ setBasketToggle, basketToggle}) => {
                                 subtotal
                             </div>
                             <div className="basketflyout__footer-subtotal-quantity">
-                                £{basket.total}
+                                £{
+                                    basket.basketItems.reduce((total, item) => total + (item.quantity*item.price), 0)
+                                }
                             </div>
                         </div>
                         <div className="button basketflyout__footer-checkout-btn" onClick={() => toCheckoutHandler()}>

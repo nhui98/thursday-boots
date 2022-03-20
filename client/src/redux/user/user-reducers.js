@@ -1,20 +1,19 @@
 import { SIGNIN_FAILURE, SIGNIN_REQUEST, SIGNIN_SIGNOUT, SIGNIN_SUCCESS } from "./user-actions"
 
 const INITIAL_STATE = {
-    user: null,
-    loading: false,
+    user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null,
 }
 
 export const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SIGNIN_REQUEST:
-            return { ...state, loading: true, error: null }
+            return { ...state, error: null }
         case SIGNIN_SUCCESS: 
-            return { ...state, loading: false, user: action.payload }
+            return { ...state, user: action.payload }
         case SIGNIN_FAILURE:
-            return { ...state, loading: false, error: action.payload }
+            return { ...state, error: action.payload }
         case SIGNIN_SIGNOUT:
-            return { user: null, loading: false}
+            return { user: null }
         default:
             return state
     }

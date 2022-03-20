@@ -6,7 +6,7 @@ import { BiSearch } from "react-icons/bi"
 import Accordion from "../accordion/accordion"
 
 import { MenDropdownLinks, WomenDropdownLinks } from "../../../data/data"
-import { useSelector, useStore } from "react-redux"
+import { useSelector } from "react-redux"
 
 const Flyout = ({ flyoutToggle, setFlyoutToggle }) => {
 
@@ -41,11 +41,11 @@ const Flyout = ({ flyoutToggle, setFlyoutToggle }) => {
                     {
                         user ? (
                             <li className="navflyout__body-link">
-                                <Link to="/logout">logout</Link>
+                                <Link to="/signout">logout</Link>
                              </li>
                         ) : (
                             <li className="navflyout__body-link">
-                                <Link to="/login">login</Link>
+                                <Link to="/signin">login</Link>
                             </li>
                         )
                     }

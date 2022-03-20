@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import { addItemToBasket } from "../../redux/basket/basket-actions";
 import { ADD_ITEM_TO_BASKET } from "../../redux/basket/basket-reducers";
 import { getProductDetails } from "../../redux/products/product-actions"
 
@@ -25,18 +26,15 @@ const ProductDetails = () => {
             setValid(false)
         } else {
             setValid(true)
-            dispatch({
-                type: ADD_ITEM_TO_BASKET,
-                payload: {
-                    id: productDetails.id,
-                    style: productDetails.style,
-                    price: productDetails.price,
-                    color: productDetails.color,
-                    img: productDetails.mainImg,
-                    size: selectedSize,
-                    quantity: 1
-                }
-            })
+            dispatch(addItemToBasket({
+                id: productDetails.id,
+                style: productDetails.style,
+                price: productDetails.price,
+                color: productDetails.color,
+                img: productDetails.mainImg,
+                size: selectedSize,
+                quantity: 1
+            }))
         }
     }
 

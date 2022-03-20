@@ -62,7 +62,9 @@ const CheckoutBasket = () => {
                                     subtotal
                                 </div>
                                 <div className="checkoutbasket__totals-subtotal-quantity">
-                                    £{basket.total}
+                                    £{
+                                        basket.basketItems.reduce((total, item) => total + (item.quantity*item.price), 0)
+                                    }
                                 </div>
                             </div>
                             <div className="checkoutbasket__totals-shipping">
@@ -78,7 +80,9 @@ const CheckoutBasket = () => {
                                     total
                                 </div>
                                 <div className="checkoutbasket__totals-totals-quantity">
-                                    £{basket.total}
+                                    £{
+                                        basket.basketItems.reduce((total, item) => total + (item.quantity*item.price), 0)
+                                    }
                                 </div>
                             </div>
                         </div>

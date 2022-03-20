@@ -9,7 +9,7 @@ const reducers = combineReducers({
     products: productsReducer,
     product: productDetailsReducer,
     basket: basketReducer,
-    delivery: deliveryAddressReducer,
+    deliveryAddress: deliveryAddressReducer,
     user: userReducer
 })
 
