@@ -44,11 +44,11 @@ const BasketFlyout = ({ setBasketToggle, basketToggle}) => {
                                     return (
                                         <div className={`basketflyout__item`} key={`basketitem-${i}`}>
                                             <Link to={`/product-details/${item.id}`} className="basketflyout__item-image">
-                                                <img src={item.img} alt={item.name} />
+                                                <img src={item.img} alt={`${item.style} ${item.color}`} />
                                             </Link>
                                             <div className="basketflyout__item-details">
                                                 <Link to={`/product-details/${item.id}`} className="basketflyout__item-details-name">
-                                                    {item.name} | {item.color}
+                                                    {item.style} | {item.color}
                                                 </Link>
                                                 <div className="basketflyout__item-details-size">
                                                     Size: {item.size}

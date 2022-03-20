@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import SliderCard from "../../../../components/slider-card/slider-card";
 
-import { homeFeaturedMenData, homeFeaturedWomenData } from "../../data"
+import { homeFeaturedMenData, homeFeaturedWomenData } from "../../../../data/data"
 
 const Featuredsm = () => {
     return (

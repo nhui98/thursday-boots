@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import ProductCard from "../../../../components/product-card/product-card"
 
-import {homeFeaturedMenData, homeFeaturedWomenData} from "../../data"
+import {homeFeaturedMenData, homeFeaturedWomenData} from "../../../../data/data"
 
 const Featuredlg = () => {
     const [featureToggle, setFeatureToggle] = useState(true)

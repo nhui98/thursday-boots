@@ -4,7 +4,7 @@ import { FaInstagram, FaFacebookSquare, FaTwitter, FaPinterestSquare, FaYoutube 
 
 import "./footer.scss"
 
-import { SitemapLinks as data} from "./data"
+import { SitemapLinks as data} from "../../data/data"
 
 const Newsletter = () => {
     const [email, setEmail] = useState("")

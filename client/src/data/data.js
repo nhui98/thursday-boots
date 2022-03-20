@@ -51,8 +51,8 @@ export const homeFeaturedMenData = [
         style: "captain",
         price: 199.00,
         color: "black matte",
-        src: "/images/home/feature-product1.webp",
-        src2: "/images/home/feature-product1-hover.webp",
+        src: "/images/mens/boots/captain/black/main.webp",
+        src2: "/images/mens/boots/captain/black/alt1.webp",
     },
     {
         id: 4,
@@ -61,8 +61,8 @@ export const homeFeaturedMenData = [
         style: "chelsea",
         price: 190.00,
         color: "grey",                          
-        src: "/images/home/feature-product2.webp",
-        src2: "/images/home/feature-product2-hover.webp",
+        src: "/images/mens/boots/chelsea/grey/main.webp",
+        src2: "/images/mens/boots/chelsea/grey/alt1.webp",
     },
     {
         id: 6,
@@ -115,6 +115,61 @@ export const homeFeaturedWomenData = [
         style: "heels",
         price: 190.00,       
         color: "black",
-        src: "/images/womens/boots/heels/black/main.webp"
+        src: "/images/womens/boots/heels/black/main.webp",
+        src2: "/images/womens/boots/heels/black/alt1.webp"
     },
+]
+
+export const SitemapLinks = [
+    {
+        category: "shop",
+        links: [
+            {
+                name: "men's boots",
+                to: "/product-listing/mens/boots"
+            },
+            {
+                name: "women's boots",
+                to: "/product-listing/womens/boots"
+            },
+            {
+                name: "men's sneakers",
+                to: "/product-listing/mens/sneakers"
+            },
+            {
+                name: "men's shoes",
+                to: "/product-listing/mens/shoes"
+            }
+        ]
+    },
+    {
+        category: "About",
+        links: [
+            {
+                name: "Out Story",
+                to: "/about"
+            },
+            {
+                name: "review",
+                to: "/reviews"
+            }
+        ]
+    },
+    {
+        category: "support",
+        links: [
+            {
+                name: "FAQ",
+                to: "/faq"
+            },
+            {
+                name: "Shipping & returns",
+                to: "/shippinginfo"
+            },
+            {
+                name: "Contact us",
+                to: "/contact"
+            }
+        ]
+    }
 ]

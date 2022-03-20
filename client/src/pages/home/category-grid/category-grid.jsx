@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-import { homeCategoryGridData as data} from "../data"
+import { homeCategoryGridData as data} from "../../../data/data"
 
 const CategoryGrid = () => {
     return (
