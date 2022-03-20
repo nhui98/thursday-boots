@@ -5,7 +5,7 @@ import { BiSearch } from "react-icons/bi"
 
 import Accordion from "../accordion/accordion"
 
-import { MenDropdownLinks, WomenDropdownLinks } from "../data"
+import { MenDropdownLinks, WomenDropdownLinks } from "../../../data/data"
 
 const Flyout = ({ flyoutToggle, setFlyoutToggle }) => {
     return (

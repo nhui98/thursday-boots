@@ -173,3 +173,69 @@ export const SitemapLinks = [
         ]
     }
 ]
+
+export const MenDropdownLinks = [
+    {
+        category: "boots",
+        links: [
+            {
+                name: "Lace-Up",
+                to: "/product-listing/mens/boots/"
+            },
+            {
+                name: "Chelsea",
+                to: "/product-listing/mens/boots/"
+            },
+            {
+                name: "Chukka",
+                to: "/product-listing/mens/boots/"
+            },
+        ]
+    },
+    {
+        category: "Sneakers",
+        links: [
+            {
+                name: "Low Tops",
+                to: "/product-listing/mens/sneakers"
+            },
+            {
+                name: "High Tops",
+                to: "/product-listing/mens/sneakers"
+            }
+        ]
+    },
+    {
+        category: "shoes",
+        links: [
+            {
+                name: "Dress Shoes",
+                to: "/product-listing/mens/shoes"
+            },
+            {
+                name: "Loafers",
+                to: "/product-listing/mens/shoes"
+            }
+        ]
+    },
+]
+
+export const WomenDropdownLinks = [
+    {
+        category: "boots",
+        links: [
+            {
+                name: "Lace-Up",
+                to: "/product-listing/womens/boots"
+            },
+            {
+                name: "Chelsea",
+                to: "/product-listing/womens/boots"
+            },
+            {
+                name: "Heels",
+                to: "/product-listing/womens/boots"
+            }
+        ]
+    },
+]

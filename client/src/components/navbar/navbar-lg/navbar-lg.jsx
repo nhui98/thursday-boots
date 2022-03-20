@@ -5,7 +5,7 @@ import { AiOutlineDown } from "react-icons/ai"
 
 import { DropDown } from "../dropdown/dropdown"
 
-import { MenDropdownLinks, WomenDropdownLinks } from "../data"
+import { MenDropdownLinks, WomenDropdownLinks } from "../../../data/data"
 import BasketIcon from "../../basket-icon/basket-icon"
 
 const NavbarLg = props => {

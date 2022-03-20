@@ -253,6 +253,28 @@ exports.productData = [
         ]
     },
     {
+        id: 15,
+        category: "womens",
+        type: "boots",
+        style: "captain",
+        price: 199.00,
+        color: "black matte",
+        mainImg: "/images/womens/boots/captain/black/main.webp",
+        altImg: [
+            { src: "/images/womens/boots/captain/black/alt1.webp" },
+        ],
+        sizes: [
+            { size: 6, stock: 100 },
+            { size: 7, stock: 0 },
+            { size: 8, stock: 100 },
+            { size: 9, stock: 100 },
+            { size: 10, stock: 100 },
+            { size: 11, stock: 100 },
+            { size: 12, stock: 100 },
+            { size: 13, stock: 100 },
+        ]
+    },
+    {
         id: 12,
         category: "womens",
         type: "boots",
