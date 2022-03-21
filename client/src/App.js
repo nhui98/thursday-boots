@@ -41,6 +41,7 @@ const App = () => {
                 <Route path="/signout" element={<Signout />} />
                 <Route path="/checkout/delivery" element={<Delivery />} />
                 <Route path="/checkout/payment" element={<Payment />} />
+                <Route path="/checkout/confirmation" element={<div>hello</div>} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </div>

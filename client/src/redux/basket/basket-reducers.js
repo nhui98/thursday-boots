@@ -1,4 +1,4 @@
-import { ADD_ITEM_TO_BASKET, REMOVE_ITEM_FROM_BASKET } from "./basket-actions"
+import { ADD_ITEM_TO_BASKET, CLEAR_BASKET, REMOVE_ITEM_FROM_BASKET } from "./basket-actions"
 
 const INITIAL_STATE = {
     basketItems: localStorage.getItem("basketItems") ? JSON.parse(localStorage.getItem("basketItems")) : [],
@@ -36,7 +36,10 @@ export const basketReducer = (state = INITIAL_STATE, action) => {
                     basketItems: state.basketItems.filter(item => item !== itemToRemove),
                 }
             }
-
+        case CLEAR_BASKET: 
+            return {
+                basketItems: [],
+            }
         default:
             return state
     }

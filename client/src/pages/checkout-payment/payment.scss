@@ -10,15 +10,17 @@
     align-items: flex-end;
     width: 50%;
     padding: 1rem 2rem;
+    row-gap: 3rem;
 
     .payment__detailreview {
       display: flex;
       flex-direction: column;
+      align-items: center;
       width: 30rem;
       row-gap: 1rem;
 
       .payment__detailreview-contact {
-        margin-top: 3rem;
+        margin-top: 2rem;
       }
 
       .payment__detailreview-contact,
@@ -46,6 +48,17 @@
           width: 25%;
           color: var(--color-blue);
         }
+      }
+    }
+
+    .payment__options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30rem;
+
+      .payment__options-paypal {
+        width: 100%;
       }
     }
   }

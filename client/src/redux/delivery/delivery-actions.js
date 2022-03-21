@@ -1,4 +1,5 @@
 export const SET_DELIVERY_ADDRESS = "SET_DELIVERY_ADDRESS"
+export const CLEAR_DELIVERY_ADDRESS = "CLEAR_DELIVERY_ADDRESS"
 
 export const setDeliveryAddress = address => async (dispatch, getState) => {
     dispatch({
