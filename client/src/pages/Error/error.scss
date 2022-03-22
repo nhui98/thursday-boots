@@ -1,4 +1,4 @@
-.error {
+.errorpage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,7 @@
   background: var(--color-offwhite);
   padding: 0 1rem;
 
-  .error__header {
+  .errorpage__header {
     text-align: center;
     h1 {
       font-size: 3rem;

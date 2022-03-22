@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended: true}))
 app.use("/api/products", productRouter)
 app.use("/api/users", userRouter)
 app.use("/api/payment", paymentRouter)
-app.use("/api/order/createorder", orderRouter)
+app.use("/api/order", orderRouter)
 
 app.get("/", (req, res) => {
     res.send("server online")

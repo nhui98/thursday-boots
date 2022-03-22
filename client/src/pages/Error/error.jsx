@@ -5,8 +5,8 @@ import "./error.scss"
 
 const Error = (props) => {
     return (
-        <main className="error">
-            <div className="error__header">
+        <main className="errorpage">
+            <div className="errorpage__header">
                 <h1>Error</h1>
                 <p>an error occurred</p>
             </div>

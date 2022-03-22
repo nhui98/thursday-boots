@@ -1,0 +1,43 @@
+.confirmation {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-offwhite);
+  padding: 1rem 2rem;
+
+  .confirmation__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+
+    .confirmation__card-tick {
+      svg {
+        font-size: 10rem;
+        color: var(--color-green);
+      }
+    }
+
+    .confirmation__card-title {
+      font-size: 2rem;
+      text-transform: capitalize;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    .confirmation__card-message {
+      text-align: center;
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    .confirmation-btn {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      box-shadow: 2px 2px 2px;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

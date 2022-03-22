@@ -19,7 +19,9 @@ const CheckoutBasket = () => {
                     }
                 </div>
                 <div className="checkoutbasket__accordion-totals">
-                    £{basket.total}
+                    £{
+                        basket.basketItems.reduce((total, item) => total + (item.quantity*item.price), 0)
+                    }
                 </div>
             </div>
             {
