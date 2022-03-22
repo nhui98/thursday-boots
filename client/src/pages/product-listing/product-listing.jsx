@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 
 import "./product-listing.scss"
 import { getProductList } from "../../redux/products/product-actions"
+import Loading from "../../components/loading/loading"
 
 const ProductListing = () => {
     const params = useParams()
@@ -18,7 +19,7 @@ const ProductListing = () => {
     return (
         <>
         {
-            loading ? (<div className="loading">Loading</div>) :
+            loading ? (<Loading />) :
             (
             <>
                 <main className="productlisting">
