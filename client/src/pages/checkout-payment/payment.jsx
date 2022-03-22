@@ -51,51 +51,55 @@ const Payment = () => {
         <>
             {
                 !deliveryAddress ? <Navigate to={`/checkout/delivery`} /> :
-                !basketItems.length > 0 ? <Navigate to={`/`} /> :
-                loading ? <Loading /> :
-                    <main className="payment">
-                        <section className="payment__form-wrapper">
-                            <div className="payment__detailreview">
-                                <CheckoutSteps delivery payment />
-                                <div className="payment__detailreview-contact">
-                                    <div className="payment__detailreview-contact-tag">
-                                        contact
-                                    </div>
-                                    <div className="payment__detailreview-contact-details">
-                                        <div className="payment__detailreview-contact-details-name">
-                                            {deliveryAddress.firstName} {deliveryAddress.lastName}
+                    !basketItems.length > 0 ? <Navigate to={`/`} /> :
+                        loading ? <Loading /> :
+                            <main className="payment">
+                                <section className="payment__form-wrapper">
+                                    <div className="payment__detailreview">
+                                        <CheckoutSteps delivery payment />
+                                        <div className="payment__basket-small">
+                                            <CheckoutBasket />
                                         </div>
-                                        <div className="payment__detailreview-contact-details-email">
-                                            {deliveryAddress.email}
+                                        <div className="payment__detailreview-contact">
+                                            <div className="payment__detailreview-contact-tag">
+                                                contact
+                                            </div>
+                                            <div className="payment__detailreview-contact-details">
+                                                <div className="payment__detailreview-contact-details-name">
+                                                    {deliveryAddress.firstName} {deliveryAddress.lastName}
+                                                </div>
+                                                <div className="payment__detailreview-contact-details-email">
+                                                    {deliveryAddress.email}
+                                                </div>
+                                            </div>
+                                            <Link to={`/checkout/delivery`}>Change</Link>
+                                        </div>
+                                        <div className="payment__detailreview-shipping">
+                                            <div className="payment__detailreview-shipping-tag">
+                                                deliver to
+                                            </div>
+                                            <div className="payment__detailreview-shipping-address">
+                                                {deliveryAddress.address}, {deliveryAddress.city}, {deliveryAddress.postcode}, {deliveryAddress.country}
+                                            </div>
+                                            <Link to={`/checkout/delivery`}>Change</Link>
                                         </div>
                                     </div>
-                                    <Link to={`/checkout/delivery`}>Change</Link>
-                                </div>
-                                <div className="payment__detailreview-shipping">
-                                    <div className="payment__detailreview-shipping-tag">
-                                        deliver to
+                            
+                                    <div className="payment__options">
+                                        <div className="payment__options-tag">payment</div>
+                                        {
+                                            error ? <div className="error">An error has occured. Please try again or contact support</div> :
+                                            PAYPAL_API_KEY &&
+                                            <PayPalScriptProvider options={intialOptions}>
+                                                <PayPalButton createOrder={createOrderHandler} onApprove={onApproveHandler} />
+                                            </PayPalScriptProvider>
+                                        }
                                     </div>
-                                    <div className="payment__detailreview-shipping-address">
-                                        {deliveryAddress.address}, {deliveryAddress.city}, {deliveryAddress.postcode}, {deliveryAddress.country}
-                                    </div>
-                                    <Link to={`/checkout/delivery`}>Change</Link>
-                                </div>
-                            </div>
-                    
-                            <form className="payment__options">
-                                {
-                                    error ? <div className="error">An error has occured. Please try again or contact support</div> :
-                                    PAYPAL_API_KEY &&
-                                    <PayPalScriptProvider options={intialOptions}>
-                                        <PayPalButton createOrder={createOrderHandler} onApprove={onApproveHandler} />
-                                    </PayPalScriptProvider>
-                                }
-                            </form>
-                        </section>
-                        <section className="payment__basket">
-                            <CheckoutBasket />
-                        </section>
-                    </main>     
+                                </section>
+                                <section className="payment__basket">
+                                    <CheckoutBasket />
+                                </section>
+                            </main>     
             }
         </>
     )         
