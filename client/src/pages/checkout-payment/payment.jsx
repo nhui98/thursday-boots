@@ -10,6 +10,7 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 import "./payment.scss"
 import PayPalButton from "../../components/paypal-button/paypal-button"
 import { createOrder } from "../../redux/order/order-actions"
+import Loading from "../../components/loading/loading"
 
 const Payment = () => {
     const { deliveryAddress } = useSelector(state => state.deliveryAddress)
@@ -49,14 +50,9 @@ const Payment = () => {
     return (
         <>
             {
-                !deliveryAddress && <Navigate to={`/checkout/delivery`} />
-            }
-            {
-                !basketItems && <Navigate to={`/`} />
-            }
-            {
-                loading ? <div className="loading">loading</div> :
-            
+                !deliveryAddress ? <Navigate to={`/checkout/delivery`} /> :
+                !basketItems.length > 0 ? <Navigate to={`/`} /> :
+                loading ? <Loading /> :
                     <main className="payment">
                         <section className="payment__form-wrapper">
                             <div className="payment__detailreview">
@@ -88,10 +84,7 @@ const Payment = () => {
                     
                             <form className="payment__options">
                                 {
-                                    error &&
-                                    <div className="error">An error has occured. Please try again or contact support</div>
-                                }
-                                {
+                                    error ? <div className="error">An error has occured. Please try again or contact support</div> :
                                     PAYPAL_API_KEY &&
                                     <PayPalScriptProvider options={intialOptions}>
                                         <PayPalButton createOrder={createOrderHandler} onApprove={onApproveHandler} />
@@ -102,11 +95,10 @@ const Payment = () => {
                         <section className="payment__basket">
                             <CheckoutBasket />
                         </section>
-                    </main>
+                    </main>     
             }
         </>
-    )
-            
+    )         
 }
 
 export default Payment

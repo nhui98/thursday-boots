@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import CheckoutBasket from "../../components/checkout-basket/checkout-basket";
 import CheckoutSteps from "../../components/checkout-steps/checkout-steps";
 import { setDeliveryAddress } from "../../redux/delivery/delivery-actions";
@@ -51,48 +51,55 @@ const Delivery = () => {
         }
     }
 
+    const { basketItems } = useSelector(state => state.basket)
+
     return (
-        <main className="delivery">
-            <section className="delivery__form-wrapper">
-                <form className="delivery__form" onSubmit={ e => formSubmitHandler(e)}>
-                    <CheckoutSteps delivery />
-                    <div className="delivery__basket-small">
-                        <CheckoutBasket />
-                    </div>
-                    <div className="delivery__form-contact">
-                        <div className="delivery__form-contact-text">
-                            <div className="delivery__form-contact-label">contact information</div>
-                            <div className="delivery__form-contact-login">already have an account? <Link to={`/login`}>Log in</Link></div>
+        <>
+            {
+                !basketItems.length > 0 ? (<Navigate to="/" />) :
+                <main className="delivery">
+                <section className="delivery__form-wrapper">
+                    <form className="delivery__form" onSubmit={ e => formSubmitHandler(e)}>
+                        <CheckoutSteps delivery />
+                        <div className="delivery__basket-small">
+                            <CheckoutBasket />
                         </div>
-                        <div className="delivery__form-email">
-                            <input type="email" placeholder="Email" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
-                        </div>              
-                    </div>
-                    <div className="delivery__form-shipping">
-                        <div className="delivery__form-shipping-label">shipping address</div>
-                        <input className="delivery__form-shipping-country" name="country" placeholder="Country" value={country} onChange={e => setCountry(e.target.value)} required  />
-                        <div className="delivery__form-shipping-name">
-                            <input type="text" placeholder="First name" name="firstname" value={firstName} onChange={e => setFirstName(e.target.value)} required  />
-                            <input type="text" placeholder="Last name" name="lastname" value={lastName} onChange={e => setLastName(e.target.value)} required  />
+                        <div className="delivery__form-contact">
+                            <div className="delivery__form-contact-text">
+                                <div className="delivery__form-contact-label">contact information</div>
+                                <div className="delivery__form-contact-login">already have an account? <Link to={`/login`}>Log in</Link></div>
+                            </div>
+                            <div className="delivery__form-email">
+                                <input type="email" placeholder="Email" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
+                            </div>              
                         </div>
-                        <div className="delivery__form-shipping-address">
-                            <input type="text" placeholder="Address" name="address" value={address} onChange={e => setAddress(e.target.value)} required  />
+                        <div className="delivery__form-shipping">
+                            <div className="delivery__form-shipping-label">shipping address</div>
+                            <input className="delivery__form-shipping-country" name="country" placeholder="Country" value={country} onChange={e => setCountry(e.target.value)} required  />
+                            <div className="delivery__form-shipping-name">
+                                <input type="text" placeholder="First name" name="firstname" value={firstName} onChange={e => setFirstName(e.target.value)} required  />
+                                <input type="text" placeholder="Last name" name="lastname" value={lastName} onChange={e => setLastName(e.target.value)} required  />
+                            </div>
+                            <div className="delivery__form-shipping-address">
+                                <input type="text" placeholder="Address" name="address" value={address} onChange={e => setAddress(e.target.value)} required  />
+                            </div>
+                            <div className="delivery__form-shipping-city">
+                                <input type="text" name="city" placeholder="City" value={city} onChange={e => setCity(e.target.value)} required  />
+                                <input type="text" name="postcode" placeholder="Postcode" value={postcode} onChange={e => setPostcode(e.target.value)} required  />
+                            </div>
+                            <div className="delivery__form-shipping-phone">
+                                <input type="number" name="phone" placeholder="Phone" value={phone} onChange={e => setPhone(e.target.value)} required  />
+                            </div>
+                            <button className="button delivery-btn">continue to payment</button>               
                         </div>
-                        <div className="delivery__form-shipping-city">
-                            <input type="text" name="city" placeholder="City" value={city} onChange={e => setCity(e.target.value)} required  />
-                            <input type="text" name="postcode" placeholder="Postcode" value={postcode} onChange={e => setPostcode(e.target.value)} required  />
-                        </div>
-                        <div className="delivery__form-shipping-phone">
-                            <input type="number" name="phone" placeholder="Phone" value={phone} onChange={e => setPhone(e.target.value)} required  />
-                        </div>
-                        <button className="button delivery-btn">continue to payment</button>               
-                    </div>
-                </form>
-            </section>
-            <section className="delivery__basket">
-                <CheckoutBasket />
-            </section>
-        </main>
+                    </form>
+                </section>
+                <section className="delivery__basket">
+                    <CheckoutBasket />
+                </section>
+            </main>
+            }
+        </>
     )
 }
 export default Delivery

@@ -43,7 +43,6 @@ const ProductDetails = () => {
 
     return (
         <>
-
             {
                 loading ? (<Loading />) :
                 !productDetails ? (<NotFound />) : 

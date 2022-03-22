@@ -23,7 +23,7 @@ const Signin = () => {
         if (user) {
             navigate(-1)
         }
-    },[user, navigate])
+    }, [user, navigate])
 
     return (
         <div className="signin">
