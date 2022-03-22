@@ -12,6 +12,7 @@ import Delivery from "./pages/checkout-delivery/delivery"
 import Signin from "./pages/account-signin/signin"
 import Signout from "./pages/account-signout/signout"
 import Payment from "./pages/checkout-payment/payment"
+import NotFound from "./pages/404/404"
 
 const PageWithFooter = props => {
     return (
@@ -42,7 +43,7 @@ const App = () => {
                 <Route path="/checkout/delivery" element={<Delivery />} />
                 <Route path="/checkout/payment" element={<Payment />} />
                 <Route path="/checkout/confirmation" element={<div>hello</div>} />
-                <Route path="*" element={<Navigate to="/" />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </div>
     )
