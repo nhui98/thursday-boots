@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const { orderRouter } = require("./routers/orders.js")
 const { paymentRouter } = require("./routers/payments.js")
 
-const { productRouter } = require("./routers/products.js")
+const { productsRouter } = require("./routers/products.js")
 const { userRouter } = require("./routers/users.js")
 
 
@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use("/api/products", productRouter)
+app.use("/api/products", productsRouter)
 app.use("/api/users", userRouter)
 app.use("/api/payment", paymentRouter)
 app.use("/api/order", orderRouter)

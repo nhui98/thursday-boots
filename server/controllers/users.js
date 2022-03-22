@@ -21,3 +21,11 @@ exports.signin = async (req, res, next) => {
         }
     }
 }
+
+// exports.register = async (req, res, next) => {
+//     try {
+//         const exitingUser = 
+//     } catch (error) {
+        
+//     }
+// }
