@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 export const productsReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case GET_PRODUCTLIST_REQUEST:
-            return { ...state, loading: true }
+            return { ...state, loading: true, error: null }
         case GET_PRODUCTLIST_SUCCESS:
             return { ...state, loading: false, productList: action.payload.data, styles: action.payload.styles }
         case GET_PRODUCTLIST_FAILURE: 
@@ -21,7 +21,7 @@ export const productsReducer = (state = INITIAL_STATE, action) => {
 export const productDetailsReducer = (state = {loading: true}, action) => {
     switch (action.type) {
         case GET_PRODUCTDETAILS_REQUEST:
-            return { ...state, loading: true }
+            return { ...state, loading: true, error: null }
         case GET_PRODUCTDETAILS_SUCCESS: 
             return { ...state, loading: false, productDetails: action.payload }
         case GET_PRODUCTDETAILS_FAILURE:

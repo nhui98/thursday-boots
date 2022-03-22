@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { addItemToBasket } from "../../redux/basket/basket-actions";
-import { ADD_ITEM_TO_BASKET } from "../../redux/basket/basket-reducers";
 import { getProductDetails } from "../../redux/products/product-actions"
 
 import "./product-details.scss"
+
+import Loading from "../../components/loading/loading"
+import Error from "../Error/error"
+import NotFound from "../404/404"
 
 const ProductDetails = () => {
     const [valid, setValid] = useState(true)
@@ -40,8 +43,11 @@ const ProductDetails = () => {
 
     return (
         <>
-            { loading ?
-                (<div className="loading">Loading</div>) :
+
+            {
+                loading ? (<Loading />) :
+                !productDetails ? (<NotFound />) : 
+                error ? (<Error />) :
                 (
                     <main className="productdetails">
                         <div className="productdetails__images">

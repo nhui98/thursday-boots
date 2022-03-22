@@ -32,63 +32,62 @@ const BasketFlyout = ({ setBasketToggle, basketToggle}) => {
                 }} />
 
             </header>
-            {
-                basket.basketItems.length > 0 && (
-                <>
-                    <section className="basketflyout__items">
-                        {
-                                basket.basketItems.map((item, i) => {
-                                    return (
-                                        <div className={`basketflyout__item`} key={`basketitem-${i}`}>
-                                            <Link to={`/product-details/${item.id}`} className="basketflyout__item-image">
-                                                <img src={item.img} alt={`${item.style} ${item.color}`} />
-                                            </Link>
-                                            <div className="basketflyout__item-details">
-                                                <Link to={`/product-details/${item.id}`} className="basketflyout__item-details-name">
-                                                    {item.style} | {item.color}
-                                                </Link>
-                                                <div className="basketflyout__item-details-size">
-                                                    Size: {item.size}
-                                                </div>
-                                                <div className="basketflyout__item-details-price">
-                                                    £{item.price} x {item.quantity}
-                                                </div>
-                                                <div onClick={() => removeFromBasketHandler(item)} className="basketflyout__item-details-remove">
-                                                    Remove
-                                                </div>
-                                            </div>
+            <section className="basketflyout__items">
+                {
+                    !basket.basketItems.length > 0 ? (<div className="basketflyout__items-empty">basket empty</div>) :
+                        basket.basketItems.map((item, i) => {
+                            return (
+                                <div className={`basketflyout__item`} key={`basketitem-${i}`}>
+                                    <Link to={`/product-details/${item.id}`} className="basketflyout__item-image">
+                                        <img src={item.img} alt={`${item.style} ${item.color}`} />
+                                    </Link>
+                                    <div className="basketflyout__item-details">
+                                        <Link to={`/product-details/${item.id}`} className="basketflyout__item-details-name">
+                                            {item.style} | {item.color}
+                                        </Link>
+                                        <div className="basketflyout__item-details-size">
+                                            Size: {item.size}
                                         </div>
-                                    )
-                                })
-                        }
-                    </section>  
-                    <footer className="basketflyout__footer">
-                        <div className="basketflyout__footer-shipping">
-                            <div className="basketflyout__footer-shipping-tag">
-                                shipping          
-                            </div>
-                            <div className="basketflyout__footer-shipping-quantity">
-                                free
-                            </div>
+                                        <div className="basketflyout__item-details-price">
+                                            £{item.price} x {item.quantity}
+                                        </div>
+                                        <div onClick={() => removeFromBasketHandler(item)} className="basketflyout__item-details-remove">
+                                            Remove
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                }
+            </section>  
+            {
+                basket.basketItems.length > 0 &&
+                <footer className="basketflyout__footer">
+                    <div className="basketflyout__footer-shipping">
+                        <div className="basketflyout__footer-shipping-tag">
+                            shipping          
                         </div>
-                        <div className="basketflyout__footer-subtotal">
-                            <div className="basketflyout__footer-subtotal-tag">
-                                subtotal
-                            </div>
-                            <div className="basketflyout__footer-subtotal-quantity">
-                                £{
-                                    basket.basketItems.reduce((total, item) => total + (item.quantity*item.price), 0)
-                                }
-                            </div>
+                        <div className="basketflyout__footer-shipping-quantity">
+                            free
                         </div>
-                        <div className="button basketflyout__footer-checkout-btn" onClick={() => toCheckoutHandler()}>
-                            <AiFillLock />
-                            checkout
+                    </div>
+                    <div className="basketflyout__footer-subtotal">
+                        <div className="basketflyout__footer-subtotal-tag">
+                            subtotal
                         </div>
-                    </footer>
-                </>               
-                )
+                        <div className="basketflyout__footer-subtotal-quantity">
+                            £{
+                                basket.basketItems.reduce((total, item) => total + (item.quantity*item.price), 0)
+                            }
+                        </div>
+                    </div>
+                    <div className="button basketflyout__footer-checkout-btn" onClick={() => toCheckoutHandler()}>
+                        <AiFillLock />
+                        checkout
+                    </div>
+                </footer>
             }
+            
         </aside>
     )
 }

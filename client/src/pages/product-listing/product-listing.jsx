@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux"
 import "./product-listing.scss"
 import { getProductList } from "../../redux/products/product-actions"
 import Loading from "../../components/loading/loading"
+import Error from "../Error/error"
+import NotFound from "../404/404"
 
 const ProductListing = () => {
     const params = useParams()
@@ -20,6 +22,8 @@ const ProductListing = () => {
         <>
         {
             loading ? (<Loading />) :
+            !productList.length > 0 ? (<NotFound />):    
+            error ? (<Error />) :
             (
             <>
                 <main className="productlisting">
