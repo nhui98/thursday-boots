@@ -1,13 +1,15 @@
 const express = require("express")
-const { orderRouter } = require("./routers/order-router.js")
-const { paymentRouter } = require("./routers/payment-router.js")
+const mongoose = require("mongoose")
+const { orderRouter } = require("./routers/orders.js")
+const { paymentRouter } = require("./routers/payments.js")
 
-const { productRouter } = require("./routers/products-router.js")
-const { userRouter } = require("./routers/users-router.js")
+const { productRouter } = require("./routers/products.js")
+const { userRouter } = require("./routers/users.js")
+
 
 const app = express()
 
-const port = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -17,10 +19,11 @@ app.use("/api/users", userRouter)
 app.use("/api/payment", paymentRouter)
 app.use("/api/order", orderRouter)
 
-app.get("/", (req, res) => {
-    res.send("server online")
-})
+const CONNECTION_URL = "mongodb+srv://khao:kaotik23@cluster0.pgqph.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+mongoose.connect(CONNECTION_URL)
+    .then(() => app.listen(PORT, () => { console.log(`listening on port ${PORT}`) }))
+    .catch(error => console.log(error.message))
 
-app.listen(port, () => {
-    console.log(`listening on port ${port}`);
-})
+
+
+

@@ -1,5 +1,5 @@
 const express = require("express")
-const { getApiKey } = require("../controllers/payments-controller")
+const { getApiKey } = require("../controllers/payments.js")
 
 const paymentRouter = express.Router()
 
