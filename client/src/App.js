@@ -1,5 +1,5 @@
 import React from "react"
-import { Routes, Route, Navigate } from "react-router-dom"
+import { Routes, Route }  from "react-router-dom"
 
 import "./App.scss"
 
@@ -13,6 +13,7 @@ import Signin from "./pages/account-signin/signin"
 import Signout from "./pages/account-signout/signout"
 import Payment from "./pages/checkout-payment/payment"
 import NotFound from "./pages/404/404"
+import Loading from "./components/loading/loading"
 
 const PageWithFooter = props => {
     return (
