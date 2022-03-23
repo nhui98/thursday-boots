@@ -1,11 +1,10 @@
 const express = require("express")
 const mongoose = require("mongoose")
+
 const { orderRouter } = require("./routers/orders.js")
 const { paymentRouter } = require("./routers/payments.js")
-
 const { productsRouter } = require("./routers/products.js")
 const { userRouter } = require("./routers/users.js")
-
 
 const app = express()
 
