@@ -1,4 +1,3 @@
-const { productData } = require("../data.js")
 const { Product } = require("../models/product.js")
 
 exports.addProduct = async (req, res, next) => {
@@ -35,16 +34,47 @@ exports.getProducts = async (req, res, next) => {
     }
 }
 
-// exports.getProducts = async (req, res, next) => {
-//     const { category, type } = req.body
-    
-//     if (!category || !type) res.status(404).send({message: "problem retrieving products"})
-    
-//     const products = productData.filter(product => product.category === category && product.type === type)
+exports.getProductsByCategory = async (req, res, next) => {
+    const { category } = req.body
 
-//     if (products && products.length > 0) {
-//         res.status(200).json(products)
-//     } else {
-//         res.status(404).send({ message: "no products found" })
-//     }
-// }
+    if (category) {
+        try {
+            const products = await Product.find({ category: category })
+            res.status(200).json(products)
+        } catch (error) {
+            res.status(404).json({ message: error.message })  
+        }
+    } else {
+        res.status(400).json({message: "no products"})
+    }
+}
+
+exports.getProductsByCategoryType = async (req, res, next) => {
+    const { category, type } = req.body
+
+    if (category && type) {
+        try {
+            const products = await Product.find({ category: category, type: type })
+            res.status(200).json(products)
+        } catch (error) {
+            res.status(404).json({ message: error.message })  
+        }
+    } else {
+        res.status(400).json({message: "no products"})
+    }
+}
+
+exports.getProductsByCategoryTypeStyle = async (req, res, next) => {
+    const { category, type, style } = req.body
+    
+    if (category && type && style) {
+        try {
+            const products = await Product.find({ category: category, type: type, style: style })
+            res.status(200).json(products)
+        } catch (error) {
+            res.status(404).json({ message: error.message })  
+        }
+    } else {
+        res.status(400).json({message: "no products"})
+    }
+}
