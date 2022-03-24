@@ -12,7 +12,7 @@ export const getProductList = (category, type) => async dispatch => {
     dispatch({ type: GET_PRODUCTLIST_REQUEST })
 
     try {
-        const { data } = await axios.post("/api/products/getProductsByCategoryType", { category, type })
+        const { data } = await axios.post("https://khao-thursdayboots.herokuapp.com/api/products/getProductsByCategoryType", { category, type })
 
         // get all the styles(ie Captain) available for this type(ie Boots)
         const styles = {}
@@ -37,7 +37,7 @@ export const getProductDetails = id => async dispatch => {
     dispatch({ type: GET_PRODUCTDETAILS_REQUEST })
     
     try {
-        const { data } = await axios.get(`/api/products/getProduct/${id}`)
+        const { data } = await axios.get(`https://khao-thursdayboots.herokuapp.com/api/products/getProduct/${id}`)
 
         dispatch({
             type: GET_PRODUCTDETAILS_SUCCESS,

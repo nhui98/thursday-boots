@@ -8,7 +8,7 @@ export const getPaypalApi = () => async dispatch => {
     dispatch({ type: GET_PAYPAL_API_REQUEST })
     
     try {
-        const { data } = await axios.get("/api/payment/apikey")
+        const { data } = await axios.get("https://khao-thursdayboots.herokuapp.com/api/payment/apikey")
         
         dispatch({
             type: GET_PAYPAL_API_SUCCESS,

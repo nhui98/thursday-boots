@@ -12,7 +12,7 @@ export const signin = (email, password) => async dispatch => {
     dispatch({ type: SIGNIN_REQUEST })
     
     try {
-        const { data } = await axios.post("/api/users/login", { email, password })
+        const { data } = await axios.post("https://khao-thursdayboots.herokuapp.com/api/users/login", { email, password })
         
         dispatch({
             type: SIGNIN_SUCCESS,
@@ -38,7 +38,7 @@ export const register = (firstName, lastName, email, password) => async dispatch
     dispatch({ type: REGISTER_REQUEST })
 
     try {
-        const { data } = await axios.post("api/users/register", firstName, lastName, email, password )
+        const { data } = await axios.post("https://khao-thursdayboots.herokuapp.com/api/users/register", firstName, lastName, email, password )
 
         dispatch({ type: REGISTER_SUCCESS, payload: data})
     } catch (error) {

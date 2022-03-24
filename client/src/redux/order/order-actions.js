@@ -46,7 +46,7 @@ export const createOrder = (user, basketitems, deliveryAddress, paymentMethod) =
 
         console.log(order);
 
-        const { data } = await axios.post("/api/orders/createorder", {order})
+        const { data } = await axios.post("https://khao-thursdayboots.herokuapp.com/api/orders/createorder", {order})
 
         dispatch({ type: CREATE_ORDER_SUCCESS, payload: data })
         
