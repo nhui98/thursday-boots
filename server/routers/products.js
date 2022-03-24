@@ -4,9 +4,9 @@ const { getProducts, getProduct, addProduct, getProductsByCategory, getProductsB
 
 const productsRouter = express.Router()
 
-productsRouter.post("/addproduct", addProduct)
-productsRouter.get("/getproduct/:id", getProduct)
-productsRouter.get("/getproducts", getProducts)
+productsRouter.post("/addProduct", addProduct)
+productsRouter.get("/getProduct/:id", getProduct)
+productsRouter.get("/getProducts", getProducts)
 productsRouter.post("/getProductsByCategory", getProductsByCategory)
 productsRouter.post("/getProductsByCategoryType", getProductsByCategoryType)
 productsRouter.post("/getProductsByCategoryTypeStyle", getProductsByCategoryTypeStyle)

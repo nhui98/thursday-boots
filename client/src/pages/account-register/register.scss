@@ -1,0 +1,60 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  row-gap: 1.5rem;
+  padding: 0 1rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  .register__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+    width: 30rem;
+
+    .register__form-tag {
+      text-transform: capitalize;
+      font-size: 0.85rem;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .register__form-name {
+      display: flex;
+      column-gap: 0.5rem;
+    }
+  }
+
+  .register__signin {
+    text-transform: capitalize;
+    text-align: center;
+    a {
+      color: var(--color-blue);
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .register {
+    .register__form {
+      width: 100%;
+
+      .register__form-name {
+        flex-direction: column;
+        row-gap: 0.5rem;
+      }
+
+      .register-btn {
+        width: 100%;
+      }
+    }
+  }
+}

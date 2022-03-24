@@ -1,3 +1,5 @@
+const { Order } = require("../models/order.js")
+
 exports.createOrder = (req, res, next) => {
     console.log(req.body)
 

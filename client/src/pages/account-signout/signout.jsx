@@ -5,13 +5,11 @@ import { signout } from "../../redux/user/user-actions";
 
 const Signout = () => {
     const { user } = useSelector(state => state.user)
-    console.log(",moo");
     const dispatch = useDispatch()
     const navigate = useNavigate()
     
     useEffect(() => {
         if (user) {
-            console.log("called");
             dispatch(signout())
             navigate(-1)
         }

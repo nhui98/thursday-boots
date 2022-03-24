@@ -35,7 +35,7 @@ const ProductListing = () => {
                                         Object.keys(styles).map((style, i) => {
                                             return (
                                                 <li className="productlisting__sidenav-link" key={`productlisting__sidenav-link-${i}`}>
-                                                    <a href="/">{style}</a>
+                                                    <Link to={`#${style}`}>{style}</Link>
                                                 </li>
                                             )
                                         })
@@ -61,7 +61,7 @@ const ProductListing = () => {
                                 {
                                      Object.keys(styles).map((style, i) => {
                                         return (
-                                            <div className="productlisting__card-container" key={`products-container-${i}`}>
+                                            <div id={style} className="productlisting__card-container" key={`products-container-${i}`}>
                                                 <p className="productlisting__card-title">{style}</p>
                                                 <div className="product__cards-wrapper">
 
@@ -96,15 +96,15 @@ const ProductListing = () => {
     )
 }
 
-const ProductCard = ({product: {id, category, type, style, price, color, mainImg }}) => {
+const ProductCard = ({product: {_id, category, type, style, price, color, mainImg }}) => {
     return (
         <div className="productlisting__productcard">
-            <Link to={`/product-details/${id}`} className="productlisting__productcard-image">
+            <Link to={`/product-details/${_id}`} className="productlisting__productcard-image">
                 <img src={mainImg} alt={`${style} ${color}`}/>
             </Link>
             <div className="productlisting__productcard-details">
                 <div className="productlisting__productcard-details-left">
-                    <Link to={`/product-details/${id}`}className="productlisting__productcard-details-name">{style}</Link>
+                    <Link to={`/product-details/${_id}`}className="productlisting__productcard-details-name">{style}</Link>
                     <div className="productlisting__productcard-details-color">{color}</div>
                 </div>
                 <div className="productlisting__productcard-details-right">

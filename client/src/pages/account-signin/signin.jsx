@@ -27,7 +27,7 @@ const Signin = () => {
 
     return (
         <div className="signin">
-            <h1>customer login</h1>
+            <h1>login</h1>
             <form className="signin__form" onSubmit={e => signinHandler(e)}>
                 {
                     error &&
