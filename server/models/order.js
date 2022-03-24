@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 
 const orderSchema = mongoose.Schema({
+    userId: { type: mongoose.ObjectId },
     email: { type: String, required: true },
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
@@ -14,6 +15,10 @@ const orderSchema = mongoose.Schema({
     orderItems: [
         {
             orderItemId: { type: mongoose.ObjectId, required: true },
+            style: { type: String, require: true },
+            price: { type: Number, require: true },
+            color: { type: String, require: true },
+            size: { type: Number, require: true },
             quantity: { type: Number, required: true }
         }
     ],

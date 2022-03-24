@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: true}))
 app.use("/api/products", productsRouter)
 app.use("/api/users", userRouter)
 app.use("/api/payment", paymentRouter)
-app.use("/api/order", orderRouter)
+app.use("/api/orders", orderRouter)
 
 const CONNECTION_URL = "mongodb+srv://khao:kaotik23@cluster0.pgqph.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose.connect(CONNECTION_URL)

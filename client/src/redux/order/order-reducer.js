@@ -19,7 +19,7 @@ export const orderReducer = (state=INITIAL_STATE, action) => {
                 ...state,
                 success: true,
                 loading: false,
-                data: action.payload
+                orderReference: action.payload
             }
         case CREATE_ORDER_FAILURE:
             return {

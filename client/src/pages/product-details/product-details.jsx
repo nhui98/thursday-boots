@@ -30,7 +30,7 @@ const ProductDetails = () => {
         } else {
             setValid(true)
             dispatch(addItemToBasket({
-                id: productDetails.id,
+                id: productDetails._id,
                 style: productDetails.style,
                 price: productDetails.price,
                 color: productDetails.color,

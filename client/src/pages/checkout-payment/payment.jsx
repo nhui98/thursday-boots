@@ -17,7 +17,6 @@ const Payment = () => {
     const { user } = useSelector(state => state.user)
     const { basketItems } = useSelector(state => state.basket)
     const { loading, error, PAYPAL_API_KEY } = useSelector(state => state.payment)
-    const order = useSelector(state=>state.order)
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -45,8 +44,9 @@ const Payment = () => {
     const navigate = useNavigate()
     const onApproveHandler = (data, actions) => {
         return actions.order.capture().then(function (details) {
+            const paymentMethod = "paypal"
             navigate(`/checkout/confirmation`)
-            dispatch(createOrder(user, basketItems, deliveryAddress)) 
+            dispatch(createOrder(user, basketItems, deliveryAddress, paymentMethod )) 
         });
     }
 
