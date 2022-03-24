@@ -18,6 +18,10 @@ app.use("/api/users", userRouter)
 app.use("/api/payment", paymentRouter)
 app.use("/api/orders", orderRouter)
 
+app.get("/", (req, res) => {
+    res.send("App running!")
+})
+
 const CONNECTION_URL = "mongodb+srv://khao:kaotik23@cluster0.pgqph.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose.connect(CONNECTION_URL)
     .then(() => app.listen(PORT, () => { console.log(`listening on port ${PORT}`) }))
