@@ -34,9 +34,13 @@ const Confirmation = () => {
                                     <h1 className="confirmation__card-title">
                                         your order is complete! 
                                     </h1>
-                                    <div className="confirmation__card-reference">
-                                        Your order reference number is: <strong>{orderId}</strong>
-                                    </div>
+                                    {
+                                        orderId &&
+                                        <div className="confirmation__card-reference">
+                                            Your order reference number is: <strong>{orderId}</strong>
+                                        </div>
+                                    }
+
                                     <div className="confirmation__card-message">
                                         Thank you for your support, we will be in touch soon with the order details.
                                     </div>

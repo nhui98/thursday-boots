@@ -3,7 +3,10 @@ import { CREATE_ORDER_FAILURE, CREATE_ORDER_REQUEST, CREATE_ORDER_SUCCESS, LEAVE
 const INITIAL_STATE = {
     success: false,
     loading: true,
-    error: null
+    error: null,
+    orderReference: {
+        orderId: null
+    }
 }
 export const orderReducer = (state=INITIAL_STATE, action) => {
     switch (action.type) {
