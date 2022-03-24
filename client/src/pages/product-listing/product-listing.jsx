@@ -35,7 +35,7 @@ const ProductListing = () => {
                                         Object.keys(styles).map((style, i) => {
                                             return (
                                                 <li className="productlisting__sidenav-link" key={`productlisting__sidenav-link-${i}`}>
-                                                    <Link to={`#${style}`}>{style}</Link>
+                                                    <Link to={`?style=${style}`}>{style}</Link>
                                                 </li>
                                             )
                                         })

@@ -45,7 +45,7 @@ export const homeCategoryGridData = [
 
 export const homeFeaturedMenData = [
     {
-        id: 1,
+        id: "623a4d67051c012d95ad1f95",
         category: "mens",
         type: "boots",
         style: "captain",
@@ -55,7 +55,7 @@ export const homeFeaturedMenData = [
         src2: "/images/mens/boots/captain/black/alt1.webp",
     },
     {
-        id: 4,
+        id: "623a52317d8a4e4aa4c8f205",
         category: "mens",
         type: "boots",
         style: "chelsea",
@@ -65,7 +65,7 @@ export const homeFeaturedMenData = [
         src2: "/images/mens/boots/chelsea/grey/alt1.webp",
     },
     {
-        id: 6,
+        id: "623a53cc31e2370aeb33bda8",
         category: "mens",
         type: "boots",
         style: "chukka",
@@ -76,7 +76,7 @@ export const homeFeaturedMenData = [
         to: "/product-listing/mens/boots"
     },
     {
-        id: 7,
+        id: "623a53cc31e2370aeb33bdb2",
         category: "mens",
         type: "sneakers",
         style: "lowtops",
@@ -89,7 +89,7 @@ export const homeFeaturedMenData = [
 
 export const homeFeaturedWomenData = [
     {
-        id: 12,
+        id: "623a54e5f258aa647ce8e225",
         category: "womens",
         type: "boots",
         style: "chelsea",
@@ -99,7 +99,7 @@ export const homeFeaturedWomenData = [
         src2: "/images/womens/boots/chelsea/black/alt1.webp",
     },
     {
-        id: 13,
+        id: "623a551b04b59382ec59bc37",
         category: "womens",
         type: "boots",
         style: "chelsea",
@@ -109,7 +109,7 @@ export const homeFeaturedWomenData = [
         src2: "/images/womens/boots/chelsea/brown/alt1.webp",
     },
     {
-        id: 14,
+        id: "623a551b04b59382ec59bc41",
         category: "womens",
         type: "boots",
         style: "heels",
@@ -180,15 +180,15 @@ export const MenDropdownLinks = [
         links: [
             {
                 name: "Lace-Up",
-                to: "/product-listing/mens/boots/"
+                to: "/product-listing/mens/boots?style=captain"
             },
             {
                 name: "Chelsea",
-                to: "/product-listing/mens/boots/"
+                to: "/product-listing/mens/boots?style=chelsea"
             },
             {
                 name: "Chukka",
-                to: "/product-listing/mens/boots/"
+                to: "/product-listing/mens/boots?style=chukka"
             },
         ]
     },
@@ -197,11 +197,11 @@ export const MenDropdownLinks = [
         links: [
             {
                 name: "Low Tops",
-                to: "/product-listing/mens/sneakers"
+                to: "/product-listing/mens/sneakers?style=lowtops"
             },
             {
                 name: "High Tops",
-                to: "/product-listing/mens/sneakers"
+                to: "/product-listing/mens/sneakers?style=hightops"
             }
         ]
     },
@@ -210,11 +210,11 @@ export const MenDropdownLinks = [
         links: [
             {
                 name: "Dress Shoes",
-                to: "/product-listing/mens/shoes"
+                to: "/product-listing/mens/shoes?style=dress"
             },
             {
                 name: "Loafers",
-                to: "/product-listing/mens/shoes"
+                to: "/product-listing/mens/shoes?style=loafers"
             }
         ]
     },
@@ -226,15 +226,15 @@ export const WomenDropdownLinks = [
         links: [
             {
                 name: "Lace-Up",
-                to: "/product-listing/womens/boots"
+                to: "/product-listing/womens/boots?style=captain"
             },
             {
                 name: "Chelsea",
-                to: "/product-listing/womens/boots"
+                to: "/product-listing/womens/boots?style=chelsea"
             },
             {
                 name: "Heels",
-                to: "/product-listing/womens/boots"
+                to: "/product-listing/womens/boots?style=heels"
             }
         ]
     },
