@@ -12,7 +12,7 @@ exports.register = async (req, res, next) => {
         const newUser = new User({ firstName, lastName, email, password: hashedPassword })
 
         const user = await newUser.save()
-        res.status(201).json(user)
+        res.status(201).json({ email: user.email, firstName: user.firstName, lastName: user.lastName, id: user._id })
         
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });

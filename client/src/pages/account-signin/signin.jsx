@@ -21,7 +21,7 @@ const Signin = () => {
 
     useEffect(() => {
         if (user) {
-            navigate(-1)
+            navigate("/")
         }
     }, [user, navigate])
 

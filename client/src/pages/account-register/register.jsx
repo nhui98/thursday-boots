@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { useDispatch } from "react-redux"
-import { Link } from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
 import { register } from "../../redux/user/user-actions"
 
 import "./register.scss"
@@ -27,12 +27,25 @@ const Register = () => {
         }
     }
 
+    const { user, registerError } = useSelector(state => state.user)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (user) {
+            navigate("/")
+        }
+    })
+
     return (
         <main className="register">
             <h1>Register</h1>
             {
+                registerError &&
+                <div className="error">Email already exists</div>
+            }
+            {
                 !passwordsMatch &&
-                <div className="error">passwords do not match</div>
+                <div className="error">Passwords do not match</div>
             }
             <form className="register__form" onSubmit={e => registerHandler(e)}>
                 <div className="register__form-tag">name</div>

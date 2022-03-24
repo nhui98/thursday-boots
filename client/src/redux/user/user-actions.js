@@ -38,7 +38,7 @@ export const register = (firstName, lastName, email, password) => async dispatch
     dispatch({ type: REGISTER_REQUEST })
 
     try {
-        const { data } = await axios.post("api/users/register", { firstName, lastName, email, password })
+        const { data } = await axios.post("api/users/register", firstName, lastName, email, password )
 
         dispatch({ type: REGISTER_SUCCESS, payload: data})
     } catch (error) {
